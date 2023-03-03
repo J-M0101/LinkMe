@@ -29,7 +29,8 @@ html, body {
 
 .intro{
     font-size: 5rem;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);  
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);
+    margin-bottom: 0;  
 }
 
 .bar{

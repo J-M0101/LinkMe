@@ -20,7 +20,7 @@
           <div class="mt7 ml7 pl6">
             <p class ="intro ma0">LinkMe</p>
             <p class ="bar ma0"></p>
-            <p class ="tagLine">Linking Company and Creator</p>
+            <p class ="tagLine ma1">Linking Company and Creator</p>
           </div>
         </div>
 
