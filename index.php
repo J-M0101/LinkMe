@@ -13,7 +13,7 @@
 ?>
   </head>
   <body>
-    <div class="parentBox"> <!-- Used for display flex. helps to align boxes on pages to parent-->
+    <div class="parentBox"> <!-- Used for display flexhello. helps to align boxes on pages to parents---->
 
       <div class = "page1">
         <div class="brandName mt6 pt4 ml7"> <!--sets a display box for all company name and title-->
