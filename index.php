@@ -19,8 +19,8 @@
         <div class="brandName mt6 pt4 ml7"> <!--sets a display box for all company name and title-->
           <div class="mt7 ml7 pl6">
             <p class ="intro ma0">LinkMe</p>
-            <p class ="bar mt0 ma0"></p>
-            <p class ="tagLine ma0">Linking Company and Creator</p>
+            <p class ="bar ma0"></p>
+            <p class ="tagLine">Linking Company and Creator</p>
           </div>
         </div>
 
