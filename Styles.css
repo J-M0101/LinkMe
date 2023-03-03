@@ -1,0 +1,50 @@
+*{
+  box-sizing: border-box;
+}
+
+body, html {
+  
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: 600;
+    color: #000;
+    font-style: normal;
+    background-color: #74BEC1;
+  }
+
+body{
+  margin: 0px;
+}
+
+.parentBox{
+    display: flex;
+    flex-wrap:inherit;
+    height: fit-content;
+
+}
+
+.brandname{
+    display: flex;
+}
+
+.intro{
+    font-size: 5rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);  
+}
+
+.bar{
+    border: 1px solid #000000;
+    transform: rotate(-0.18deg);  
+}
+
+.tagLine{
+    font-size: 1.2rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40); 
+}
+
+.button{
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+}
