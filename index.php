@@ -53,16 +53,13 @@
       <div class="greybackground flex mt3 mb7 w-40 round">
           <p class = "ml5 mt5">next page</p>
       </div>
-      <div class="yellowbackground flex mt3 mb7 w-40 round">
-          <p class = "ml5 mt5">next page</p>
+      <div class="yellowbackground flex w-40 round">
+          <p class = "ml5 mt5">Test left</p>
       </div>
     </div>
     <div class="page">
-      <div class="yellowbackground flex mt3 mb7 w-40 round">
-          <p class = "ml5 mt5">next page</p>
-      </div>
-      <div class="greybackground flex mt3 mb7 w-40 round">
-          <p class = "ml5 mt5">next page</p>
+      <div class="w-100">
+        test
       </div>
     </div>
 
