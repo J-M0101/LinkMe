@@ -50,9 +50,24 @@
       </div>
     </div>
     <div class="page">
-      <div class="boxLeft">
-          <p>next page</p>
+      <div class="greybackground flex mt3 mb7 w-40 round">
+          <p class = "ml5 mt5">next page</p>
+      </div>
+      <div class="yellowbackground flex mt3 mb7 w-40 round">
+          <p class = "ml5 mt5">next page</p>
       </div>
     </div>
+    <div class="page">
+      <div class="yellowbackground flex mt3 mb7 w-40 round">
+          <p class = "ml5 mt5">next page</p>
+      </div>
+      <div class="greybackground flex mt3 mb7 w-40 round">
+          <p class = "ml5 mt5">next page</p>
+      </div>
+    </div>
+
+    <footer class ="w-100 pt7 greybackground">
+      check
+    </footer>
   </body>
 </html>

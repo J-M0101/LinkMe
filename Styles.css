@@ -91,3 +91,16 @@ align-self: center;
 .sizeOf{
     font-size: 1.3rem;
 }
+
+.greybackground{
+    background-color: #36413D;
+}
+
+.round{
+    border-radius: 10rem;
+    
+}
+
+.yellowbackground{
+    background-color: #FFF0A4;
+}
