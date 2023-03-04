@@ -14,24 +14,24 @@
   </head>
   <body>
     <div class="page items-center justify-center "> <!-- Used for display flex. helps to align boxes on pages to parent -->
-      <div class="flex items-center ml6">
-        <div class="mb6 mr5"> <!--sets a display box for all company name and title-->
+      <div class="flex items-center ml7">
+        <div class="mb6 mr6"> <!--sets a display box for all company name and title-->
           <p class ="intro ma0 grow dib f3-ns no-underline">LinkMe</p>
           <p class ="bar ma0"></p>
           <p class ="tagLine ma1">Linking Company and Creator</p>
         </div>
-        <div class="login ml6 "> <!--display box that holds the email password and submit button-->
-          <form action="profile.php" method="post" class="ml3 mr5 pt3 pb2">
+        <div class="flex"> <!--display box that holds the email password and submit button-->
+          <form action="profile.php" method="post" class="ml3 mr5 pt3 w-100">
             <div class="flex items-center button mw9 pv2 ph3"><!--display box holds email input-->
-                <label for="email"> Email:</label>
-                <input class="mw7 w-100" type="text" name="email">
+                <label class="sizeOf" for="email"> Email:</label>
+                <input class="w-100" type="text" name="email">
             </div>
             <div class="flex items-center button mw9 mt4 pv2 ph3"><!--display box holds password input-->
-                <label for="password"> password:</label>
-                <input class=" w-100" type="text" name="password">
+                <label class="sizeOf" for="password"> password:</label>
+                <input class="pr6 w-100" type="text" name="password">
             </div>
             <div class="mt4 flex justify-center"><!--display box holds login button-->
-                <input class="ph6 pv3 ma0 bckColor grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Login">
+                <input class=" w-100 pv3 ma0 bckColor grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Login">
             </div>
 
             <div>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="flex justify-center"><!-- display box holds Create account button-->
-                <input class="ph6 pv3 ma0 bckColorCreateAccount grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Create Account">
+                <input class=" button ph5 pv3 ma0 bckColorCreateAccount grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Create Account">
             </div>
             
             <div class="flex justify-center pt3"><!-- display box holds Forgot Password button-->
