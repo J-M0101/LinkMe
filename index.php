@@ -83,11 +83,11 @@
             </div>
 
             <div class="flex justify-center"><!-- display box holds Create account button-->
-                <input class=" button ph5 pv3 ma0 bckColorCreateAccount grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Create Account">
+                <a href = "createcompany.php" class=" button ph5 pv3 ma0 bckColorCreateAccount grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow buttoncolor">Create Accout</a>
             </div>
             
             <div class="flex justify-center pt3"><!-- display box holds Forgot Password button-->
-                <input class="bn bluebutton grow dib f3-ns no-underline" type="submit" value="forgot Password?">
+                <a href = "passwordreset.php" class="bn bluebutton grow dib f3-ns no-underline">Forgot Password?</a>
             </div>
           </form>
         </div>
@@ -105,10 +105,10 @@
       <div class="flex ba align-center items-center justify-center w-50 mb5 round">
           test
       </div>
-    </div>
+    </div>  
 
     <footer class ="w-100 footer">
-      <div class ="pa3 pb7">
+      <div class ="pa4 pb7">
         check
       </div>
     </footer>

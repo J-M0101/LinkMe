@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="page items-center justify-center ">
-       Home Page
+       Password Reset
     </div>
 
     <footer class ="w-100 footer">
