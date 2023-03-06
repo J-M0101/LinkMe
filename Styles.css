@@ -94,11 +94,24 @@ align-self: center;
 
 .greybackground{
     background-color: #36413D;
+    border: 1px solid #000000;
+    border-radius: 40px;
+    
     
 }
 
 
 .yellowbackground{
     background-color: #FFF0A4;
-    
+    border: 1px solid #000000;
+    border-radius: 40px;
+}
+
+.footer{
+     background-color: #36413D;
+    border: 1px solid #000000;
+}
+
+.round{
+    border-radius: 40px;
 }
