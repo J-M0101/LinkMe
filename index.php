@@ -72,7 +72,7 @@
             </div>
             <div class="flex items-center button mw9 mt4 pv2 ph3"><!--display box holds password input-->
                 <label class="sizeOf" for="password"> password:</label>
-                <input class="pr6 w-100" type="text" name="password">
+                <input class="pr6 w-100" type="password" name="password">
             </div>
             <div class="mt4 flex justify-center"><!--display box holds login button-->
                 <input class=" w-100 pv3 ma0 bckColor grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Login">
