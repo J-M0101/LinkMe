@@ -34,7 +34,7 @@ a, a:active {
 }
 
 .introTwo{
-    font-size: 5rem;
+    font-size: 7rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40);
     margin-bottom: 0;  
 }
@@ -130,4 +130,15 @@ align-self: center;
 .buttoncolor{
     text-decoration: none;
     color: black;
+}
+
+.company{
+    color: #FFF0A4;
+    font-size: 2rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.40); 
+}
+
+.bar3{
+    border: 1px solid #000000;
+    transform: rotate(-0.18deg);  
 }
