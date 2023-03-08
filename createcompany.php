@@ -7,7 +7,8 @@
   </head>
   <body>
     <div class="page items-center justify-center ">
-    <a href = "index.php" class ="intro ma0 grow dib f3-ns no-underline">LinkMe</a>
+    <a href = "index.php" class ="introTwo">LinkMe</a>
+
     </div>
   </body>
 </html>
