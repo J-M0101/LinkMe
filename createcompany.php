@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="page items-center justify-center ">
-        Create account
+    <a href = "index.php" class ="intro ma0 grow dib f3-ns no-underline">LinkMe</a>
     </div>
   </body>
 </html>

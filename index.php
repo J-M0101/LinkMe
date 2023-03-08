@@ -60,7 +60,7 @@
     <div class="page items-center justify-center "> <!-- Used for display flex. helps to align boxes on pages to parent -->
       <div class="flex items-center ml7">
         <div class="mb6 mr6"> <!--sets a display box for all company name and title-->
-          <p class ="intro ma0 grow dib f3-ns no-underline">LinkMe</p>
+          <a href = "index.php" class ="intro ma0 grow dib f3-ns no-underline">LinkMe</a>
           <p class ="bar ma0"></p>
           <p class ="tagLine ma1">Linking Company and Creator</p>
         </div>
