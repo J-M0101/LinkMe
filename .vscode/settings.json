@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "LinkMe"
+    "liveServer.settings.multiRootWorkspaceName": "LinkMe",
+    "liveServer.settings.port": 81
 }
