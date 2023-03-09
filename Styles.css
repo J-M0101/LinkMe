@@ -142,3 +142,16 @@ align-self: center;
     border: 1px solid #000000;
     transform: rotate(-0.18deg);  
 }
+
+.infocolor{
+    color: #FFF0A4;
+    font-size: 1.3rem;
+}
+
+.inputbckcolor{
+    background-color: #74BEC1;
+}
+
+.infosize{
+    font-size: 1.3 rem;
+}

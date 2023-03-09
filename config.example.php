@@ -1,3 +1,3 @@
 <?php
 
-$BASE_URL = "/LinkMe"
+$BASE_URL = "/LinkMe";

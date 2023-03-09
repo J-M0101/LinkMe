@@ -1,6 +1,6 @@
 <html>
   <head>
-  <title>Home Page</title>
+  <title>User Type</title>
   <?php
     include "head.php";
 ?>
