@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="mt4 flex justify-center"><!--display box holds create account-->
-                    <input class=" w-100 pv3 ma0 bckColor grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Create Account">
+                    <input class="w-100 pv3 ma0 bckColor grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Create Account">
                 </div>
           </form>
     </div>
