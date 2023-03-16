@@ -1,51 +1,35 @@
 <?php
     session_start();
-    
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      if (isset($_POST["email"]) && isset($_POST["password"])) 
-      {   
-        $email = $_POST["email"];
-        $password = $_POST["password"];
+    require_once("DataBaseAction.php");
+    $data = $db->getData(); 
+    //checks if user is logged on
+    if (isset($_SESSION['user_id'])) {
 
-        // Create connection
-        $conn = mysqli_connect("localhost", "root", "", "linkme");
-        
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
+      header('Location: companyinfo.php');
+      exit();
+    }
+    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
+      $email = $_POST['email'];
+      $password = $_POST['password'];
 
-        $sql = "SELECT password from user WHERE email = '$email'";
-        try{
-            $results = mysqli_query($conn, $sql);
+      $query = "SELECT user_id, password FROM creator_users WHERE email = ?";
+      $stmt = $data->conn->prepare($query);
+      $stmt->bind_param('s', $email);
+      $stmt->execute();
+      $stmt->store_result();
 
-            if ($results) { 
-              $row = mysqli_fetch_assoc($results);
-
-              if ( $row["password"] === $password ) 
-              {
-                  $_SESSION['logged_in'] = true;
-                  $_SESSION['email'] = $_POST["email"];
-                  // TODO: cache username so you don't have to make hella subquries
-                  // $_SESSION['username'] = $row['username'];
-                  // echo "Successful login";
-                  header("Location: homepage.php");
-              }
-              else
-              {
-                  $error_message = 'Incorrect Password';
-              }
-            } 
-          else {
-              $error_message = "Failed Login";
+      if ($stmt->num_rows === 1) {
+          $stmt->bind_result($user_id, $hash_password);
+          $stmt->fetch();
+          if (password_verify($password, $hash_password)) {
+              $_SESSION['user_id'] = $user_id;
+              header('Location: companyinfo.php');
+              exit();
+          } else {
+              echo "Incorrect password!";
           }
-        }
-        catch (Exception $e) {
-            $error_message = "Failed query of creditCardNumber and pin";
-        }
-      }
-      else
-      {
-          $error_message = "Missing input";
+        } else {
+          echo "Invalid email or password!";
       }
     }
 ?>
