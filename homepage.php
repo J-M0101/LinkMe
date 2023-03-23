@@ -8,29 +8,36 @@
   <body style="background-color:#36413D">
   <!-- Titlebar -->
     <div class="titlebar">
-      <div class="flex justify-between" style="align-items: center">
-        <div class="pl2 logoText" style="witdth: 300px; text-align: center">
+      <div class="flex justify-between" >
+        <div class="pl2 pt2 logoText" style="witdth: 300px; text-align: center">
           <span class = "pl2">LinkMe </span><br>
           <span class="tagline">Linking Company and Creator<span>
         </div>
       
-        <div class="titletext flex align-center">
-          <div class="mr4">
-            Profile
+        <div class="pt4 w-40" >
+          <div class="titletext w-100 flex justify-between">
+            <div class="w-30">
+              <form action="profile.php" class="w-100" method="post">
+                <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Profile">
+              </form>
+            </div>
+            <div class="w-30">
+              <form action="trending.php" class="w-100" method="post">
+                  <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Trending">
+              </form>
+            </div>
+            <div class="w-30">
+              <form action="inbox.php" class="w-100" method="post">
+                  <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Inbox">
+              </form>
+            </div>
           </div>
-          <div class="mr4">
-            Trending
-          </div>
-          <div>
-            Inbox
-          </div>
-
         </div>
         <div style="width: 300px"></div>
 
       </div>
     </div>
-    <!-- Body -->
+  <!-- Body -->
     <div class="flex justify-between">
       <!--Left Profile box-->
       <div class="flex mt4 w-30 justify-center">
