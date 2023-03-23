@@ -6,22 +6,22 @@
 ?>
   </head>
   <body style="background-color:#36413D">
+  <!-- Titlebar -->
     <div class="titlebar">
-      <div class="flex justify-between">
-
-        <div class="pl2 pt4 logoText" style="witdth: 300px; text-align: center">
+      <div class="flex justify-between" style="align-items: center">
+        <div class="pl2 logoText" style="witdth: 300px; text-align: center">
           <span class = "pl2">LinkMe </span><br>
           <span class="tagline">Linking Company and Creator<span>
         </div>
-
+      
         <div class="titletext flex align-center">
-          <div class="pt5 mr4">
+          <div class="mr4">
             Profile
           </div>
-          <div class="pt5 mr4">
+          <div class="mr4">
             Trending
           </div>
-          <div class="pt5">
+          <div>
             Inbox
           </div>
 
@@ -30,29 +30,41 @@
 
       </div>
     </div>
-
-    <div class="flex mt5 justify-center">
-      <div class="w-70 pv6 yellowbackground" style="text-align: center">
-        Home Page
+    <!-- Body -->
+    <div class="flex justify-between">
+      <!--Left Profile box-->
+      <div class="flex mt4 w-30 justify-center">
+        <div class="w-70 profile yellowbackground">
+          text
+        </div>
       </div>
-    </div> 
-
-    <div class="flex mt5 justify-center">
-      <div class="w-70 pv6 yellowbackground" style="text-align: center">
-        Home Page
+      <!-- middle column -->
+      <div class="w-40">
+        <!-- search -->
+        <div>
+          <div class="mt4 mb4 " style="text-align: center">
+            <form action="smconnect.php" method="post">
+            <label class="pt1" for="search"></label>
+            <input class="w-50 pv3 centertext round" type="text" name="search" value="search">
+            </form>
+          </div>
+          <!-- profile summary -->
+          <div class="pv6  yellowbackground">
+            Home Page
+          </div>
+          <div class=" pv6 mt5 yellowbackground">
+            Home Page
+          </div>
+          <div class=" pv6 mt5 yellowbackground">
+            Home Page
+          </div>
+          <div class=" pv6 mt5 yellowbackground">
+            Home Page
+          </div>
+        </div>  
       </div>
-    </div> 
-
-    <div class="flex mt5 justify-center">
-      <div class="w-70 pv6 yellowbackground" style="text-align: center">
-        Home Page
-      </div>
-    </div> 
-
-    <div class="flex mt5 justify-center">
-      <div class="w-70 pv6 yellowbackground" style="text-align: center">
-        Home Page
-      </div>
-    </div> 
+      <!-- Right side of page -->
+      <div class="w-30"></div>  
+    </div>
   </body>
 </html>
