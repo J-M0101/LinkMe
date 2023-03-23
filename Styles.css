@@ -196,3 +196,7 @@ align-self: center;
 .bluebackground{
     background-color: #74BEC1;
 }
+
+.homebutton{
+    border: none; 
+}
