@@ -1,37 +1,19 @@
 <?php
     session_start();
-    require_once("DataBaseAction.php");
-    $data = $db->getData(); 
+    include "DataBaseActions.php";
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    error_reporting(E_ALL ^ E_WARNING);
     //checks if user is logged on
+    $db = new DataBaseActions();
     if (isset($_SESSION['user_id'])) {
 
       header('Location: companyinfo.php');
       exit();
     }
-    if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
-      $email = $_POST['email'];
-      $password = $_POST['password'];
 
-      $query = "SELECT user_id, password FROM creator_users WHERE email = ?";
-      $stmt = $data->conn->prepare($query);
-      $stmt->bind_param('s', $email);
-      $stmt->execute();
-      $stmt->store_result();
-
-      if ($stmt->num_rows === 1) {
-          $stmt->bind_result($user_id, $hash_password);
-          $stmt->fetch();
-          if (password_verify($password, $hash_password)) {
-              $_SESSION['user_id'] = $user_id;
-              header('Location: companyinfo.php');
-              exit();
-          } else {
-              echo "Incorrect password!";
-          }
-        } else {
-          echo "Invalid email or password!";
-      }
-    }
+    
 ?>
 <html>
   <head>
@@ -49,7 +31,7 @@
           <p class ="tagLine ma1">Linking Company and Creator</p>
         </div>
         <div class="flex"> <!--display box that holds the email password and submit button-->
-          <form action="index.php" method="post" class="ml3 mr5 pt3 w-100">
+          <form action="login.php" method="post" class="ml3 mr5 pt3 w-100">
             <div class="flex items-center button mw9 pv2 ph3"><!--display box holds email input-->
                 <label class="sizeOf" for="email"> Email:</label>
                 <input class="w-100" type="text" name="email">

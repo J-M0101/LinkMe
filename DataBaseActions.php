@@ -1,5 +1,6 @@
 <?php
 require_once("include.php");
+
 class DataBaseActions extends Exception{
     public $conn;
     public static string $dbname = 'LinkMe'; 
