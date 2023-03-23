@@ -16,6 +16,8 @@ html, body {
 
   .titlebar{
     background-color: #74BEC1;
+    border-bottom: 1px solid #ccc;
+   
   }
 
   .titletext{
@@ -40,6 +42,7 @@ a, a:active {
 
 .yellowbackground{
     background-color:#FFF0A4;
+    text-align: center
 }
 
 .page {
@@ -176,4 +179,12 @@ align-self: center;
 
 .infosize{
     font-size: 1.3 rem;
+}
+
+.profile{
+    height: 40%;
+}
+
+.centertext{
+    text-align: center
 }
