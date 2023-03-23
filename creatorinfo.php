@@ -1,6 +1,5 @@
 <html>
   <head>
-  <title>Creator Info</title>
   <?php
     include "head.php";
 ?>

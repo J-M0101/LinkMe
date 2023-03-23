@@ -12,12 +12,34 @@ html, body {
     background-color: #74BEC1;
   }
 
+
+
+  .titlebar{
+    background-color: #74BEC1;
+  }
+
+  .titletext{
+    font-size: 36px;
+  }
+  
+  .logotext{
+    font-size: 60px;
+  }
+
+  .tagline{
+    font-size: 5px;
+  }
+
 a {
     color: #000;
 }
 
 a, a:active {
     text-decoration: none;
+}
+
+.yellowbackground{
+    background-color:#FFF0A4;
 }
 
 .page {
