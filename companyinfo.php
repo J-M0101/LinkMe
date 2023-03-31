@@ -1,3 +1,34 @@
+<?php
+    require_once("include.php");
+    require_once("DataBaseActions.php");
+    
+     //checks if fields are empty
+    if($_POST&&
+    $_POST["firstname"] && $_POST["lastname"] && $_POST["password"] && $_POST["email"]
+     && $_POST["Role"] && $_POST["company"]&& $_POST["password"] ==$_POST["Confirm"]) {
+        
+        $firstname =  $_POST["firstname"];
+        $lastname = $_POST["lastname"];
+        $password = $_POST["password"];
+        $email = $_POST["email"];
+        $role = $_POST["Role"];
+        $company = $_POST["Company"];
+
+        $db = new DataBaseActions();
+        if (!$db->emailIsUnique($email)){
+            header("location:companyinfo.phpfailure=$login_result".
+            "&firstname=$firstname"."&lastname=$lastname"."&email=$email"."&company=$company");
+            die();
+        }
+
+        echo "trying to add user";
+        $db->addBusiness($firstName, $lastName, $company, $role, $password, $email);
+        echo "user added";
+        //move on to next page?
+        header("smconnect:index.php");
+        die();
+    }
+?>
 <html>
   <head>
   <title>Company Info</title>
@@ -8,7 +39,7 @@
   <body>
     <div class="flex-column page items-center justify-center">
       <a href = "index.php" class ="introTwo pb2 flex">LinkMe</a>
-      <form action="smconnect.php" method="post">
+      <form action="companyinfo.php" method="post">
             <div class="flex mw9 pv2 ph3"><!--display box holds email input-->
                 <label class="infocolor" for="email"> Email:</label>
                 <input class="w-100 inputbckcolor" type="text" name="email">

@@ -1,3 +1,35 @@
+<?php
+    require_once("include.php");
+    require_once("DataBaseActions.php");
+    
+     //checks if fields are empty
+    if($_POST&&
+    $_POST["firstname"] && $_POST["lastname"] && $_POST["password"]
+     && $_POST["email"]&& $_POST["company"]&& $_POST["password"] ==$_POST["Confirm"]) {
+        
+        $firstname =  $_POST["firstname"];
+        $lastname = $_POST["lastname"];
+        $password = $_POST["password"];
+        $email = $_POST["email"];
+        $company = $_POST["comapany"];
+
+        $db = new DataBaseActions();
+        if (!$db->emailIsUnique($email)){
+            $login_result = "email";
+            header("location:creatorinfo.phpfailure=$login_result".
+            "&firstname=$firstname"."&lastname=$lastname"."&email=$email"."&company=$company");
+
+            die();
+        }
+
+        echo "trying to add user";
+        $db->addCreator($firstName, $lastName, $password,  $email, $company);
+        echo "user added";
+
+        header("location:index.php");
+        die();
+    }
+?>
 <html>
   <head>
   <?php
