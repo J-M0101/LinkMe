@@ -3,7 +3,7 @@ require_once("include.php");
 
 class DataBaseActions extends Exception{
     public $conn;
-    public static string $dbname = 'LinkMe'; 
+    public static string $dbname = 'LinkMe';
 
     /**
      * connect to database
@@ -51,7 +51,7 @@ class DataBaseActions extends Exception{
             foreach ($niches as $niche) {
                 $sql = "INSERT INTO `niches` (`name`) VALUES ('$niche')";
                 $result = mysqli_query($this->conn, $sql);
-                
+
                 if (!$result) {
                     echo "Error inserting niche $niche: " . mysqli_error($this->conn) . "\n";
                 }
@@ -60,9 +60,9 @@ class DataBaseActions extends Exception{
             //adding user with 3 niche
             $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `niche_id`)
             VALUES
-            ('test', 'test', 'test@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'fashion')),
-            ('test', 'test', 'test@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'cooking')),
-            ('test', 'test', 'test@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'))";
+            ('test1', 'test1', 'test1@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'fashion')),
+            ('test2', 'test2', 'test2@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'cooking')),
+            ('test3', 'test3', 'test3@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'))";
             $results = mysqli_query($this->conn, $sql);
 
         }
@@ -107,7 +107,7 @@ class DataBaseActions extends Exception{
     public function getCreatorNiche($niche){
         $sql = "SELECT * FROM creator_users WHERE niche_id = (SELECT id FROM niches WHERE name = '$niche')";
         $results = mysqli_query($this->conn, $sql);
-    
+
         if(mysqli_num_rows($results) > 0){
             $users = array();
             while($row = mysqli_fetch_assoc($results)){
@@ -128,13 +128,13 @@ class DataBaseActions extends Exception{
         $result = mysqli_query($this->conn, $sql);
         if(mysqli_num_rows($result) > 0) {
             $row = mysqli_fetch_assoc($result);
-            return array("user_type" => "business", "user_id" => $row["id"]);
+            return array("user_type" => "business", "user_id" => $row["user_id"]);
         } else {
             $sql = "SELECT * FROM `creator_users` WHERE `email` = '$email' AND `password` = '$password'";
             $result = mysqli_query($this->conn, $sql);
             if(mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_assoc($result);
-                return array("user_type" => "creator", "user_id" => $row["id"]);
+                return array("user_type" => "creator", "user_id" => $row["user_id"]);
             }
         }
         return null;
@@ -157,7 +157,7 @@ class DataBaseActions extends Exception{
         }
         return true;
     }
-       
+
 
 }
 ?>

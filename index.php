@@ -12,8 +12,6 @@
       header('Location: companyinfo.php');
       exit();
     }
-
-    
 ?>
 <html>
   <head>
@@ -21,6 +19,7 @@
   <?php
     include "head.php";
 ?>
+
   </head>
   <body>
     <div class="page items-center justify-center "> <!-- Used for display flex. helps to align boxes on pages to parent -->
@@ -31,7 +30,7 @@
           <p class ="tagLine ma1">Linking Company and Creator</p>
         </div>
         <div class="flex"> <!--display box that holds the email password and submit button-->
-          <form action="login.php" method="post" class="ml3 mr5 pt3 w-100">
+          <form action="" method="POST" class="ml3 mr5 pt3 w-100">
             <div class="flex items-center button mw9 pv2 ph3"><!--display box holds email input-->
                 <label class="sizeOf" for="email"> Email:</label>
                 <input class="w-100" type="text" name="email">
@@ -41,7 +40,7 @@
                 <input class="pr6 w-100" type="password" name="password">
             </div>
             <div class="mt4 flex justify-center"><!--display box holds login button-->
-                <input class=" w-100 pv3 ma0 bckColor grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Login">
+                <input class=" w-100 pv3 ma0 bckColor grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" type="submit" value="Login" name="submit">
             </div>
 
             <div>
@@ -51,11 +50,25 @@
             <div class="flex justify-center"><!-- display box holds Create account button-->
                 <a href = "creatorcompany.php" class=" button ph5 pv3 ma0 bckColorCreateAccount grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow buttoncolor">Create Accout</a>
             </div>
-            
+
             <div class="flex justify-center pt3"><!-- display box holds Forgot Password button-->
                 <a href = "passwordreset.php" class="bn bluebutton grow dib f3-ns no-underline">Forgot Password?</a>
             </div>
           </form>
+          <?php
+            if(isset($_POST["submit"])){
+              if(!empty($_POST['email']) && !empty($_POST['password'])) {
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $user_info = $db->login($email, $password);
+                if ($user_info == null) {
+                  echo "Login Failed.";
+                } else {
+                  echo "Login Successful.";
+                }
+              }
+            }
+          ?>
         </div>
       </div>
     </div>
@@ -71,7 +84,7 @@
       <div class="flex ba align-center items-center justify-center w-50 mb5 round">
           test
       </div>
-    </div>  
+    </div>
 
     <footer class ="w-100 footer">
       <div class ="pa4 pb7">
