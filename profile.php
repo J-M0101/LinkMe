@@ -1,13 +1,14 @@
 <html style="background-color:#36413D">
   <head>
-  <title>Home Page</title>
+  <title>Profile Page</title>
+
   <?php
     include "head.php";
 ?>
   </head>
   <body style="background-color:#36413D">
   <!-- Titlebar -->
-    <div class="titlebar">
+  <div class="titlebar">
       <div class="flex justify-between" >
         <div class="w-30">
           <div class="pt2 logoText" style="witdth: 300px; text-align: center">
@@ -38,41 +39,29 @@
 
       </div>
     </div>
+    <!-- Body -->
+    <div class="flex flex-column">
+        <!-- search -->
+        <div>
+          <div class="mt3 mb3" style="text-align: center">
+            <form action="smconnect.php" method="post">
+            <label class="pt1" for="search"></label>
+            <input class="w-20 pv3 centertext round" type="text" name="search" value="search">
+            </form>
+          </div>
   <!-- Body -->
     <div class="flex justify-between">
       <!--Left Profile box-->
-      <div class="flex mt4 w-30 justify-center">
-        <div class="w-70 profile yellowbackground">
-          text
+      <div class="flex w-30 h-300 justify-center">
+        <div class="pv6 w-90 profile yellowbackground">
         </div>
       </div>
-      <!-- middle column -->
-      <div class="w-40">
-        <!-- search -->
-        <div>
-          <div class="mt4 mb4 " style="text-align: center">
-            <form action="smconnect.php" method="post">
-            <label class="pt1" for="search"></label>
-            <input class="w-70 pv3 centertext round" type="text" name="search" value="search">
-            </form>
+      <!-- Middle Column -->
+          <!-- Profile Summary -->
+          <div class="pv6 yellowbackground flex-grow-1">
           </div>
-          <!-- profile summary -->
-          <div class="pv6  yellowbackground">
-            Home Page
-          </div>
-          <div class=" pv6 mt5 yellowbackground">
-            Home Page
-          </div>
-          <div class=" pv6 mt5 yellowbackground">
-            Home Page
-          </div>
-          <div class=" pv6 mt5 yellowbackground">
-            Home Page
-          </div>
-        </div>  
-      </div>
-      <!-- Right side of page -->
-      <div class="w-30"></div>  
+      <!-- Right Side of Page -->
+      <div style="padding-right: 5%;"></div>  
     </div>
   </body>
 </html>
