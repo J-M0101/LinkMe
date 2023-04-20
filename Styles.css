@@ -188,3 +188,15 @@ align-self: center;
 .centertext{
     text-align: center
 }
+
+.grey{
+    background-color:#A4A4A4;
+}
+
+.bluebackground{
+    background-color: #74BEC1;
+}
+
+.homebutton{
+    border: none; 
+}
