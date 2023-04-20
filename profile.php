@@ -1,6 +1,7 @@
 <html style="background-color:#36413D">
   <head>
   <title>Profile Page</title>
+
   <?php
     include "head.php";
 ?>
@@ -48,7 +49,6 @@
             <input class="w-20 pv3 centertext round" type="text" name="search" value="search">
             </form>
           </div>
-  
   <!-- Body -->
     <div class="flex justify-between">
       <!--Left Profile box-->
