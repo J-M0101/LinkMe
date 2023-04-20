@@ -7,7 +7,7 @@
   </head>
   <body style="background-color:#36413D">
   <!-- Titlebar -->
-  <div class="titlebar">
+    <div class="titlebar">
       <div class="flex justify-between" >
         <div class="w-30">
           <div class="pt2 logoText" style="witdth: 300px; text-align: center">
@@ -38,5 +38,13 @@
 
       </div>
     </div>
+
+    <div class="flex mt4 justify-center">  
+      <div class="flex w-90 yellowbackground">
+        <div class="w-30">hello</div>
+        <div class="w-40">hello</div>
+        <div class="w-30">hello</div>
+      </div>
+    </div>  
   </body>
 </html>
