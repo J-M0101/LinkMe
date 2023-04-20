@@ -39,6 +39,25 @@ class DataBaseActions extends Exception{
         `name` varchar(255) NOT NULL, PRIMARY KEY (`id`))";
         $results = mysqli_query($this->conn, $sql);
 
+        $sql = "CREATE TABLE IF NOT EXISTS `YouTube` 
+        (`creator_username` varchar(255) NOT NULL, 
+        `link` varchar(255) NOT NULL, 
+        `follower_count` varchar(255) NOT NULL";
+        $results = mysqli_query($this->conn, $sql);
+
+        $sql = "CREATE TABLE IF NOT EXISTS `Instagram` 
+        (`creator_username` varchar(255) NOT NULL, 
+        `link` varchar(255) NOT NULL, 
+        `follower_count` varchar(255) NOT NULL";
+        $results = mysqli_query($this->conn, $sql);
+
+        $sql = "CREATE TABLE IF NOT EXISTS `Twitter` 
+        (`creator_username` varchar(255) NOT NULL, 
+        `link` varchar(255) NOT NULL, 
+        `follower_count` varchar(255) NOT NULL";
+        $results = mysqli_query($this->conn, $sql);
+
+
         //temp deleted niche
         $sql = "CREATE TABLE IF NOT EXISTS `creator_users` 
         (`firstname` varchar(255) NOT NULL,
