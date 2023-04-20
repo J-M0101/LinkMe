@@ -1,7 +1,6 @@
 <html style="background-color:#36413D">
   <head>
-  <title>Profile Page</title>
-
+  <title>Trending Page</title>
   <?php
     include "head.php";
 ?>
@@ -49,19 +48,26 @@
             <input class="w-20 pv3 centertext round" type="text" name="search" value="search">
             </form>
           </div>
+  
   <!-- Body -->
-    <div class="flex justify-between">
-      <!--Left Profile box-->
-      <div class="flex w-30 h-300 justify-center">
-        <div class="pv6 w-90 profile yellowbackground">
-        </div>
+<div class="flex justify-center">
+
+  <!-- Middle Column -->
+  <div class="w-40">
+    <!-- Profile Summary -->
+    <div class="pv6 yellowbackground w-100 relative">
+      
+      <!-- Profile Header -->
+      <div class="profile-header absolute top-1 left-2 w-90 flex justify-between items-center pv1">
+        <div>For You</div>
+        <div>Trending</div>
+        <div>Top Engagement</div>
+        <div>Filter By</div>
+        <!-- Line below the header -->
+        <div class="bt b--black absolute bottom-0 left-0 w-100"></div>
       </div>
-      <!-- Middle Column -->
-          <!-- Profile Summary -->
-          <div class="pv6 yellowbackground flex-grow-1">
-          </div>
-      <!-- Right Side of Page -->
-      <div style="padding-right: 5%;"></div>  
     </div>
+  </div>
+</div>
   </body>
 </html>
