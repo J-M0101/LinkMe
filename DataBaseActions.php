@@ -34,13 +34,48 @@ class DataBaseActions extends Exception{
         mysqli_query($this->conn,"CREATE DATABASE ". DatabaseActions::$dbname);
         $this->conn = mysqli_connect("localhost", "root", "", DataBaseActions::$dbname);
 
-        $sql = "CREATE TABLE IF NOT EXISTS `niches` (`id` int(11) NOT NULL AUTO_INCREMENT,`name` varchar(255) NOT NULL, PRIMARY KEY (`id`))";
+        $sql = "CREATE TABLE IF NOT EXISTS `niches` 
+        (`id` int(11) NOT NULL AUTO_INCREMENT,
+        `name` varchar(255) NOT NULL, PRIMARY KEY (`id`))";
         $results = mysqli_query($this->conn, $sql);
 
-        $sql = "CREATE TABLE IF NOT EXISTS `creator_users` (`user_id` INT NOT NULL AUTO_INCREMENT,`firstname` varchar(255) NOT NULL,`lastname` varchar(255) NOT NULL,`password` varchar(255) NOT NULL,`email` varchar(255) NOT NULL, `niche_id` INT NOT NULL,CONSTRAINT `fk_creator_users_niches` FOREIGN KEY (`niche_id`) REFERENCES `niches` (`id`), PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+        $sql = "CREATE TABLE IF NOT EXISTS `YouTube` 
+        (`creator_username` varchar(255) NOT NULL, 
+        `link` varchar(255) NOT NULL, 
+        `follower_count` varchar(255) NOT NULL)";
         $results = mysqli_query($this->conn, $sql);
 
-        $sql = "CREATE TABLE IF NOT EXISTS `business_users` (`user_id` INT NOT NULL AUTO_INCREMENT,`firstname` varchar(255) NOT NULL, `lastname` varchar(255) NOT NULL, `businessName` varchar(255) NOT NULL,`role` varchar(255) NOT NULL,`password` varchar(255) NOT NULL,`email` varchar(255) NOT NULL,`niche_id` INT NOT NULL,CONSTRAINT `fk_business_users_niches` FOREIGN KEY (`niche_id`) REFERENCES `niches` (`id`), PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
+        $sql = "CREATE TABLE IF NOT EXISTS `Instagram` 
+        (`creator_username` varchar(255) NOT NULL, 
+        `link` varchar(255) NOT NULL, 
+        `follower_count` varchar(255) NOT NULL)";
+        $results = mysqli_query($this->conn, $sql);
+
+        $sql = "CREATE TABLE IF NOT EXISTS `Twitter` 
+        (`creator_username` varchar(255) NOT NULL, 
+        `link` varchar(255) NOT NULL, 
+        `follower_count` varchar(255) NOT NULL)";
+        $results = mysqli_query($this->conn, $sql);
+
+
+        //temp deleted niche
+        $sql = "CREATE TABLE IF NOT EXISTS `creator_users` 
+        (`firstname` varchar(255) NOT NULL,
+        `lastname` varchar(255) NOT NULL,
+        `password` varchar(255) NOT NULL,
+        `email` varchar(255) NOT NULL UNIQUE,
+        `username` varchar(255) NOT NULL UNIQUE)
+        ";
+        $results = mysqli_query($this->conn, $sql);
+   
+        $sql = "CREATE TABLE IF NOT EXISTS `business_users`
+        (`firstname` varchar(255) NOT NULL, 
+        `lastname` varchar(255) NOT NULL, 
+        `company` varchar(255) NOT NULL,
+        `role` varchar(255) NOT NULL,
+        `password` varchar(255) NOT NULL,
+        `email` varchar(255) NOT NULL UNIQUE)
+        ";
         $results = mysqli_query($this->conn, $sql);
 
         if ($result = mysqli_query($this->conn, $sql)) {
@@ -58,6 +93,7 @@ class DataBaseActions extends Exception{
             }
 
             //adding user with 3 niche
+
             $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `niche_id`)
             VALUES
             ('test1', 'test1', 'test1@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'fashion')),
@@ -71,10 +107,16 @@ class DataBaseActions extends Exception{
     /**
      * Add business user
      */
-    public function addBusiness($firstName, $lastName, $businessName, $role, $password,  $email, $niche){
-        $sql = "INSERT INTO business_users (firstname, lastname, businessName, role, password, email, niche)
-        values ('$firstName','$lastName', '$businessName', '$role', '$password','$email',  (SELECT id FROM niches WHERE name = '$niche'))";
+    public function addBusiness($firstname, $lastname, $company, $role, $password, $email){
+        $sql = "INSERT INTO business_users (firstname, lastname, company, role, password, email)
+        values ('$firstname','$lastname', '$company', '$role', '$password','$email')";
+        
         $results = mysqli_query($this->conn, $sql);
+
+        //checking for error
+        if (!$results) {
+            die('Error executing query: ' . mysqli_error($this->conn));
+        }
 
         if ($results) {
             $userId = mysqli_insert_id($this->conn);
@@ -88,9 +130,9 @@ class DataBaseActions extends Exception{
     /**
      * Add creator
      */
-    public function addCreator($firstName, $lastName, $password,  $email, $niche){
-        $sql = "INSERT INTO creator_users (firstname, lastname, password, email, niche_id)
-            VALUES ('$firstName', '$lastName', '$password', '$email', (SELECT id FROM niches WHERE name = '$niche'))";
+    public function addCreator($firstName, $lastName, $password,  $email, $username){
+        $sql = "INSERT INTO creator_users (firstname, lastname, password, email, username)
+        VALUES ('$firstName', '$lastName', '$password', '$email', '$username')";
         $results = mysqli_query($this->conn, $sql);
 
         if ($results) {
@@ -146,6 +188,11 @@ class DataBaseActions extends Exception{
     public function emailIsUnique($email){
         $sql = "SELECT * FROM business_users WHERE email = '$email' ";
         $result = mysqli_query($this->conn, $sql);
+        //checking for error
+        if (!$result) {
+            die('Error executing query: ' . mysqli_error($this->conn));
+        }
+
         if(mysqli_num_rows($result) > 0) {
             return false;
         }else{
@@ -154,6 +201,19 @@ class DataBaseActions extends Exception{
             if(mysqli_num_rows($result) > 0) {
                 return false;
             }
+        }
+        return true;
+    }
+
+
+    /**
+     * Checks if creator's username is unique
+     */
+    public function usernameIsUnique($username){
+        $sql = "SELECT * FROM creator_users WHERE username = '$username' ";
+        $result = mysqli_query($this->conn, $sql);
+        if(mysqli_num_rows($result) > 0) {
+            return false;
         }
         return true;
     }
