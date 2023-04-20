@@ -34,7 +34,7 @@
         $db->addCreator($firstname, $lastname, $password,  $email, $username);
         echo "user added";
 
-        header("location:index.php");
+        header("location:smconnect.php");
         die();
     }
 ?>

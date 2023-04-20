@@ -30,7 +30,7 @@
         $db->addBusiness($firstname, $lastname, $company, $role, $password, $email);
         echo "user added";
         //move on to next page?
-        header("location:index.php");
+        header("location:smconnect.php");
         die();
     }
 ?>
