@@ -15,31 +15,24 @@
             <span class="tagline">Linking Company and Creator<span>
           </div>
         </div> 
-        <div class="pt4 w-40">
-          <div class="titletext w-100 flex justify-between">
-            <div class="w-30">
+        <div class="flex pt4 w-70">
+          <div class="titletext w-100 flex" style="justify-content: center;">
+            <div class="w-20">
               <form action="profile.php" class="w-100" method="post">
                 <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Profile">
               </form>
             </div>
-            <div class="w-30">
-              <form action="trending.php" class="w-100" method="post">
+            <div class="mr6 pr4">
+              <form action="trendingpage.php" class="w-100" method="post">
                   <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Trending">
-              </form>
-            </div>
-            <div class="w-30">
-              <form action="inbox.php" class="w-100" method="post">
-                  <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Inbox">
               </form>
             </div>
           </div>
         </div>
-        <div class="w-30"></div>
-
       </div>
     </div>
   <!-- Body -->
-    <div class="flex justify-between">
+    <div class="flex">
       <!--Left Profile box-->
       <div class="flex mt4 w-30 justify-center">
         <div class="w-70 profile yellowbackground">
@@ -47,29 +40,41 @@
         </div>
       </div>
       <!-- middle column -->
-      <div class="w-40">
+      <div class="w-60">
         <!-- search -->
+        <div class="mt4 mb4 " style="text-align: center">
+          <form action="smconnect.php" method="post">
+          <label class="pt1" for="search"></label>
+          <input class="w-70 pv3 centertext round" type="text" name="search" onfocus="this.value=''" value="search">
+          </form>
+        </div>
+        <!-- profile summary -->
+        <div class="container">
+          <p class="pv6  yellowbackground">
+            Home Page
+          </p>
+          <p class=" pv6 mt5 yellowbackground">
+            Home Page
+          </p>
+          <p class=" pv6 mt5 yellowbackground">
+            Home Page
+          </p>
+          <p class=" pv6 mt5 yellowbackground">
+            Home Page
+          </p>
+          <p class=" pv6 mt5 yellowbackground">
+            Home Page
+          </p>
+          <p class=" pv6 mt5 yellowbackground">
+            Home Page
+          </p>
+          <p class=" pv6 mt5 yellowbackground">
+            Home Page
+          </p>
+          <p class=" pv6 mt5 yellowbackground">
+            Home Page
+          </p>
         <div>
-          <div class="mt4 mb4 " style="text-align: center">
-            <form action="smconnect.php" method="post">
-            <label class="pt1" for="search"></label>
-            <input class="w-70 pv3 centertext round" type="text" name="search" value="search">
-            </form>
-          </div>
-          <!-- profile summary -->
-          <div class="pv6  yellowbackground">
-            Home Page
-          </div>
-          <div class=" pv6 mt5 yellowbackground">
-            Home Page
-          </div>
-          <div class=" pv6 mt5 yellowbackground">
-            Home Page
-          </div>
-          <div class=" pv6 mt5 yellowbackground">
-            Home Page
-          </div>
-        </div>  
       </div>
       <!-- Right side of page -->
       <div class="w-30"></div>  

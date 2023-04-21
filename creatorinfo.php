@@ -48,10 +48,10 @@
     <div class="flex-column page items-center justify-center">
       <a href = "index.php" class ="introTwo pb2 flex">LinkMe</a>
       <form action="creatorinfo.php" method="post">
-            <div class="flex mw9 pv2 ph3"><!--display box holds email input-->
-                <label class="infocolor" for="email"> Email:</label>
-                <input class="w-100 inputbckcolor" type="text" name="email">
-            </div>
+            <div class="flex button mt2 pv2 ph3"><!--display box holds email input-->
+                    <label class="infosize pt1" for="email"> email:</label>
+                    <input class="pr4 w-80" type="email" name="email">
+                </div>
             <div>
                 <div class="flex button mt2 pv2 ph3"><!--display box holds password input-->
                     <label class="infosize pt1" for="password"> password:</label>
