@@ -110,24 +110,180 @@
               </div>
             </div>
           </div>
-          <p class=" pv6 mt5 yellowbackground">
-            Home Page
-          </p>
-          <p class=" pv6 mt5 yellowbackground">
-            Home Page
-          </p>
-          <p class=" pv6 mt5 yellowbackground">
-            Home Page
-          </p>
-          <p class=" pv6 mt5 yellowbackground">
-            Home Page
-          </p>
-          <p class=" pv6 mt5 yellowbackground">
-            Home Page
-          </p>
-          <p class=" pv6 mt5 yellowbackground">
-            Home Page
-          </p>
+          <div class="profiletag mt5 flex flex-column yellowbackground">
+            <div class="flex flex-column w-100 h-50 pt3 topbox">
+              <div class="flex flex-row justify-around">
+                <div class="flex circle justify-center">
+                  <p class="username">
+                    7.6
+                  </p>
+                </div>
+                <div class="pr6 pt4 username">Username</div>
+              </div>
+            </div>
+            <div class="flex flex-column w-100 h-25 pt1">
+              <div class="username">Statistics</div>
+            </div>
+            <div class="flex flex-row w-100 h-50 justify-around topbox">
+              <div class="w-100 mediatype">Youtube Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Facebook Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Twitter Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+            </div>
+          </div>
+          <div class="profiletag mt5 flex flex-column yellowbackground">
+            <div class="flex flex-column w-100 h-50 pt3 topbox">
+              <div class="flex flex-row justify-around">
+                <div class="flex circle justify-center">
+                  <p class="username">
+                    7.6
+                  </p>
+                </div>
+                <div class="pr6 pt4 username">Username</div>
+              </div>
+            </div>
+            <div class="flex flex-column w-100 h-25 pt1">
+              <div class="username">Statistics</div>
+            </div>
+            <div class="flex flex-row w-100 h-50 justify-around topbox">
+              <div class="w-100 mediatype">Youtube Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Facebook Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Twitter Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+            </div>
+          </div>
+          <div class="profiletag mt5 flex flex-column yellowbackground">
+            <div class="flex flex-column w-100 h-50 pt3 topbox">
+              <div class="flex flex-row justify-around">
+                <div class="flex circle justify-center">
+                  <p class="username">
+                    7.6
+                  </p>
+                </div>
+                <div class="pr6 pt4 username">Username</div>
+              </div>
+            </div>
+            <div class="flex flex-column w-100 h-25 pt1">
+              <div class="username">Statistics</div>
+            </div>
+            <div class="flex flex-row w-100 h-50 justify-around topbox">
+              <div class="w-100 mediatype">Youtube Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Facebook Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Twitter Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+            </div>
+          </div>
+          <div class="profiletag mt5 flex flex-column yellowbackground">
+            <div class="flex flex-column w-100 h-50 pt3 topbox">
+              <div class="flex flex-row justify-around">
+                <div class="flex circle justify-center">
+                  <p class="username">
+                    7.6
+                  </p>
+                </div>
+                <div class="pr6 pt4 username">Username</div>
+              </div>
+            </div>
+            <div class="flex flex-column w-100 h-25 pt1">
+              <div class="username">Statistics</div>
+            </div>
+            <div class="flex flex-row w-100 h-50 justify-around topbox">
+              <div class="w-100 mediatype">Youtube Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Facebook Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Twitter Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+            </div>
+          </div>
+          <div class="profiletag mt5 flex flex-column yellowbackground">
+            <div class="flex flex-column w-100 h-50 pt3 topbox">
+              <div class="flex flex-row justify-around">
+                <div class="flex circle justify-center">
+                  <p class="username">
+                    7.6
+                  </p>
+                </div>
+                <div class="pr6 pt4 username">Username</div>
+              </div>
+            </div>
+            <div class="flex flex-column w-100 h-25 pt1">
+              <div class="username">Statistics</div>
+            </div>
+            <div class="flex flex-row w-100 h-50 justify-around topbox">
+              <div class="w-100 mediatype">Youtube Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Facebook Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Twitter Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+            </div>
+          </div>
+          <div class="profiletag mt5 flex flex-column yellowbackground">
+            <div class="flex flex-column w-100 h-50 pt3 topbox">
+              <div class="flex flex-row justify-around">
+                <div class="flex circle justify-center">
+                  <p class="username">
+                    7.6
+                  </p>
+                </div>
+                <div class="pr6 pt4 username">Username</div>
+              </div>
+            </div>
+            <div class="flex flex-column w-100 h-25 pt1">
+              <div class="username">Statistics</div>
+            </div>
+            <div class="flex flex-row w-100 h-50 justify-around topbox">
+              <div class="w-100 mediatype">Youtube Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Facebook Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+              <div class="w-100 mediatype">Twitter Name
+                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+              </div>
+            </div>
+          </div>
         <div>
       </div>
       <!-- Right side of page -->

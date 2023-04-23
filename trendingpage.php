@@ -52,7 +52,7 @@
         <div class="flex h-75 mt4 justify-center">  
           <div class="flex w-90 pt3 yellowbackground">
             <div class="w-25 flex-column">
-              <div>For You</div>
+              <div class="bb bw1">For You</div>
                 <div class="pt3 containerOne">
                   <div>test</div>
                   <div>test</div>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="w-25 flex-column">
-              <div>Trending</div>
+              <div class="bb bw1">Trending</div>
                 <div class="pt3 containerOne">
                   <div>test</div>
                   <div>test</div>
@@ -134,7 +134,7 @@
                 </div>
             </div>
             <div class="w-25 flex-column">
-              <div>Top engagement</div>
+              <div class="bb bw1">Top engagement</div>
                 <div class="pt3 containerOne">
                   <div>test</div>
                   <div>test</div>
@@ -175,7 +175,7 @@
                 </div>
             </div>
             <div class="w-25 flex-column">
-              <div>Filter By</div>
+              <div class="bb bw1">Filter By</div>
                 <div class="pt3 containerOne">
                   <div>test</div>
                   <div>test</div>
