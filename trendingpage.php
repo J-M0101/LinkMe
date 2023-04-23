@@ -219,5 +219,10 @@
         </div>
       </div>
     </div>
+    <footer class ="w-100 footer">
+      <div class ="pa4 pb6">
+        check
+      </div>
+    </footer>
   </body>
 </html>

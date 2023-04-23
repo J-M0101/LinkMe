@@ -6,7 +6,7 @@
 ?>
   </head>
   <body style="background-color:#36413D">
-  <!-- Titlebar -->
+    <!-- Titlebar -->
     <div class="titlebar">
       <div class="flex justify-between" >
         <div class="w-30">
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-  <!-- Body -->
+    <!-- Body -->
     <div class="flex">
       <!--Left Profile box-->
       <div class="flex mt4 w-30 justify-center">
@@ -285,9 +285,16 @@
             </div>
           </div>
         <div>
+        <!-- Right side of page -->
+        <div class="w-30"></div>  
       </div>
-      <!-- Right side of page -->
-      <div class="w-30"></div>  
     </div>
+  </div>
+  </div>
+  <footer class ="w-100 footer">
+    <div class ="pa4 pb6">
+      check
+    </div>
+  </footer>
   </body>
 </html>
