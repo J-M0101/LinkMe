@@ -6,7 +6,7 @@
 ?>
   </head>
   <body style="background-color:#36413D">
-  <!-- Titlebar -->
+    <!-- Titlebar -->
     <div class="titlebar">
       <div class="flex justify-between" >
         <div class="w-30">
@@ -53,35 +53,30 @@
           <div class="flex w-90 yellowbackground">
             <!-- Username -->
             <div class="mt4 mb4 ml4 mr4" style="text-align: left; font-size: 36px;">
-              John Doe
-            <div>
-            <!-- Icons -->
-            <div class="mt2" style="text-align: left; font-size: 16px; font-family: Arial;">
-              Insert icons here
-            <div>
-            <!-- Line divider -->
-            <div class="mt2">
-            <hr style="border: 2px solid black; margin: 0; width: 100%;">
-            <!-- About me -->
-            <div class="mt2 mb4" style="text-align: left; font-size: 22px;">
-              About Me
-            <div>
-            <div class="mt2 mb4" style="text-align: left; font-size: 16px; font-family: Arial;">
-            I'm a passionate adventurer who loves exploring the great outdoors through mountain climbing, biking, and hiking. With his unwavering enthusiasm and a strong love for nature, John has climbed some of the highest peaks and biked through some of the most challenging trails around the world. When he's not out in the wilderness, John can be found sharing his experiences and knowledge with others, inspiring them to explore and appreciate the beauty of our planet.
-            <div>
-            <!-- Tags -->
-            <div class="mt2 mb4" style="text-align: left; font-size: 16px; font-family: Arial;">
-              Tags: Mountain Climbing, Biking, Hiking
-            <div>
+              <div class="" style="text-align: left; font-size: 36px;">
+                John Doe
+              </div>
+              <!-- Icons -->
+              <div class="mt2 mb2" style="text-align: left; font-size: 16px; font-family: Arial;">
+                Insert icons here
+              </div>
+              <!-- Line divider -->
+              <hr style="border: 2px solid black; margin: 0; width: 100%;">
+              <!-- About me -->
+              <div class="mt2 mb2" style="text-align: left; font-size: 22px; font-family: Arial;">
+                About Me
+              </div>
+              <div class="mt2 mb4" style="text-align: left; font-size: 16px; font-family: Arial;">
+                I'm a passionate adventurer who loves exploring the great outdoors through mountain climbing, biking, and hiking. With his unwavering enthusiasm and a strong love for nature, John has climbed some of the highest peaks and biked through some of the most challenging trails around the world. When he's not out in the wilderness, John can be found sharing his experiences and knowledge with others, inspiring them to explore and appreciate the beauty of our planet.
+              </div>
+              <!-- Tags -->
+              <div class="mt2 mb4" style="text-align: left; font-size: 16px; font-family: Arial;">
+                Tags: Mountain Climbing, Biking, Hiking
+              </div>
+            </div>
           </div>
-          
         </div>
       </div>
     </div>
-    <footer class ="w-100 footer">
-      <div class ="pa4 pb6">
-        check
-      </div>
-    </footer>
   </body>
 </html>
