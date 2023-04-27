@@ -3,6 +3,11 @@
   <title>Home Page</title>
   <?php
     include "head.php";
+    require_once("include.php");
+    require_once("DataBaseActions.php");
+    $db = new DataBaseActions();
+    // include "DataBaseActions.php";
+    // $db = new DataBaseActions();
 ?>
   </head>
   <body style="background-color:#36413D">
@@ -14,7 +19,7 @@
             <span class = "pl2"><button class="bluebackground homebutton link grow bg-animate" type="button"><a href="homepage.php">LinkMe</a></button> </span><br>
             <span class="tagline">Linking Company and Creator<span>
           </div>
-        </div> 
+        </div>
         <div class="flex pt4 w-70">
           <div class="titletext w-100 flex" style="justify-content: center;">
             <div class="w-20">
@@ -51,242 +56,68 @@
         <!-- profile summary -->
         <div class="container">
           <!-- First profile box (margin for first is different than the rest) -->
-          <div class="profiletag flex flex-column yellowbackground">
-            <div class="flex flex-column w-100 h-50 pt3 topbox">
-              <div class="flex flex-row justify-around">
-                <div class="flex circle justify-center">
-                  <p class="username">
-                    7.6
-                  </p>
+          <?php
+          // Establish a connection to the database
+        /*
+          $conn = mysqli_connect("localhost", "root", "","LinkMe");
+          if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+          }
+          */
+
+          $sql = "SELECT * FROM creator_users";
+          $result = $db->getUsers();
+          if ($result === false) {
+                  // query failed, print error message
+                  echo "Error: " . mysqli_error($conn);
+          }
+          if (mysqli_num_rows($result) > 0) {
+            // Output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+              // Print the data you want to display
+              ?>
+              <div class="profiletag flex flex-column yellowbackground">
+                <div class="flex flex-column w-100 h-50 pt3 topbox">
+                  <div class="flex flex-row justify-around">
+                    <div class="flex circle justify-center">
+                      <p class="username">
+                        7.6
+                      </p>
+                    </div>
+                    <div class="pr6 pt4 username"><?php echo $row["firstname"]; echo $row["lastname"];?></div>
+                  </div>
                 </div>
-                <div class="pr6 pt4 username">Username</div>
-              </div>
-            </div>
-            <div class="flex flex-column w-100 h-25 pt1">
-              <div class="username">Statistics</div>
-            </div>
-            <div class="flex  flex-row w-100 h-50 justify-around topbox">
-              <div class="w-100 mediatype">Youtube Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Facebook Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Twitter Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-            </div>
-          </div>
-          <!-- Second profile box. -->
-          <div class="profiletag mt5 flex flex-column yellowbackground">
-            <div class="flex flex-column w-100 h-50 pt3 topbox">
-              <div class="flex flex-row justify-around">
-                <div class="flex circle justify-center">
-                  <p class="username">
-                    7.6
-                  </p>
+                <div class="flex flex-column w-100 h-25 pt1">
+                  <div class="username">Statistics</div>
                 </div>
-                <div class="pr6 pt4 username">Username</div>
-              </div>
-            </div>
-            <div class="flex flex-column w-100 h-25 pt1">
-              <div class="username">Statistics</div>
-            </div>
-            <div class="flex flex-row w-100 h-50 justify-around topbox">
-              <div class="w-100 mediatype">Youtube Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Facebook Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Twitter Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-            </div>
-          </div>
-          <div class="profiletag mt5 flex flex-column yellowbackground">
-            <div class="flex flex-column w-100 h-50 pt3 topbox">
-              <div class="flex flex-row justify-around">
-                <div class="flex circle justify-center">
-                  <p class="username">
-                    7.6
-                  </p>
+                <div class="flex  flex-row w-100 h-50 justify-around topbox">
+                  <div class="w-100 mediatype"><?php echo $row["youtube_username"]; ?>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+                  </div>
+                  <div class="w-100 mediatype"><?php echo $row["facebook_username"]; ?>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+                  </div>
+                  <div class="w-100 mediatype"><?php echo $row["twitter_username"]; ?>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+                  </div>
                 </div>
-                <div class="pr6 pt4 username">Username</div>
               </div>
-            </div>
-            <div class="flex flex-column w-100 h-25 pt1">
-              <div class="username">Statistics</div>
-            </div>
-            <div class="flex flex-row w-100 h-50 justify-around topbox">
-              <div class="w-100 mediatype">Youtube Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Facebook Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Twitter Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-            </div>
-          </div>
-          <div class="profiletag mt5 flex flex-column yellowbackground">
-            <div class="flex flex-column w-100 h-50 pt3 topbox">
-              <div class="flex flex-row justify-around">
-                <div class="flex circle justify-center">
-                  <p class="username">
-                    7.6
-                  </p>
-                </div>
-                <div class="pr6 pt4 username">Username</div>
-              </div>
-            </div>
-            <div class="flex flex-column w-100 h-25 pt1">
-              <div class="username">Statistics</div>
-            </div>
-            <div class="flex flex-row w-100 h-50 justify-around topbox">
-              <div class="w-100 mediatype">Youtube Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Facebook Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Twitter Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-            </div>
-          </div>
-          <div class="profiletag mt5 flex flex-column yellowbackground">
-            <div class="flex flex-column w-100 h-50 pt3 topbox">
-              <div class="flex flex-row justify-around">
-                <div class="flex circle justify-center">
-                  <p class="username">
-                    7.6
-                  </p>
-                </div>
-                <div class="pr6 pt4 username">Username</div>
-              </div>
-            </div>
-            <div class="flex flex-column w-100 h-25 pt1">
-              <div class="username">Statistics</div>
-            </div>
-            <div class="flex flex-row w-100 h-50 justify-around topbox">
-              <div class="w-100 mediatype">Youtube Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Facebook Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Twitter Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-            </div>
-          </div>
-          <div class="profiletag mt5 flex flex-column yellowbackground">
-            <div class="flex flex-column w-100 h-50 pt3 topbox">
-              <div class="flex flex-row justify-around">
-                <div class="flex circle justify-center">
-                  <p class="username">
-                    7.6
-                  </p>
-                </div>
-                <div class="pr6 pt4 username">Username</div>
-              </div>
-            </div>
-            <div class="flex flex-column w-100 h-25 pt1">
-              <div class="username">Statistics</div>
-            </div>
-            <div class="flex flex-row w-100 h-50 justify-around topbox">
-              <div class="w-100 mediatype">Youtube Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Facebook Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Twitter Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-            </div>
-          </div>
-          <div class="profiletag mt5 flex flex-column yellowbackground">
-            <div class="flex flex-column w-100 h-50 pt3 topbox">
-              <div class="flex flex-row justify-around">
-                <div class="flex circle justify-center">
-                  <p class="username">
-                    7.6
-                  </p>
-                </div>
-                <div class="pr6 pt4 username">Username</div>
-              </div>
-            </div>
-            <div class="flex flex-column w-100 h-25 pt1">
-              <div class="username">Statistics</div>
-            </div>
-            <div class="flex flex-row w-100 h-50 justify-around topbox">
-              <div class="w-100 mediatype">Youtube Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Facebook Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Twitter Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-            </div>
-          </div>
-          <div class="profiletag mt5 flex flex-column yellowbackground">
-            <div class="flex flex-column w-100 h-50 pt3 topbox">
-              <div class="flex flex-row justify-around">
-                <div class="flex circle justify-center">
-                  <p class="username">
-                    7.6
-                  </p>
-                </div>
-                <div class="pr6 pt4 username">Username</div>
-              </div>
-            </div>
-            <div class="flex flex-column w-100 h-25 pt1">
-              <div class="username">Statistics</div>
-            </div>
-            <div class="flex flex-row w-100 h-50 justify-around topbox">
-              <div class="w-100 mediatype">Youtube Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Facebook Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-              <div class="w-100 mediatype">Twitter Name
-                <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
-              </div>
-            </div>
-          </div>
-        <div>
+              <?php
+            }
+          } else {
+            echo "0 results";
+          }
+          die();
+          // Close the database connection
+          //mysqli_close($conn);
+          ?>
+        </div>
+
         <!-- Right side of page -->
-        <div class="w-30"></div>  
+        <div class="w-30"></div>
       </div>
     </div>
   </div>

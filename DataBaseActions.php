@@ -34,43 +34,47 @@ class DataBaseActions extends Exception{
         mysqli_query($this->conn,"CREATE DATABASE ". DatabaseActions::$dbname);
         $this->conn = mysqli_connect("localhost", "root", "", DataBaseActions::$dbname);
 
-        $sql = "CREATE TABLE IF NOT EXISTS `niches` 
+        $sql = "CREATE TABLE IF NOT EXISTS `niches`
         (`id` int(11) NOT NULL AUTO_INCREMENT,
         `name` varchar(255) NOT NULL, PRIMARY KEY (`id`))";
         $results = mysqli_query($this->conn, $sql);
 
-        $sql = "CREATE TABLE IF NOT EXISTS `YouTube` 
-        (`creator_username` varchar(255) NOT NULL, 
-        `link` varchar(255) NOT NULL, 
+        $sql = "CREATE TABLE IF NOT EXISTS `YouTube`
+        (`youtube_username` varchar(255) NOT NULL,
+        `link` varchar(255) NOT NULL,
         `follower_count` varchar(255) NOT NULL)";
         $results = mysqli_query($this->conn, $sql);
 
-        $sql = "CREATE TABLE IF NOT EXISTS `Instagram` 
-        (`creator_username` varchar(255) NOT NULL, 
-        `link` varchar(255) NOT NULL, 
+        $sql = "CREATE TABLE IF NOT EXISTS `Instagram`
+        (`isntagram_username` varchar(255) NOT NULL,
+        `link` varchar(255) NOT NULL,
         `follower_count` varchar(255) NOT NULL)";
         $results = mysqli_query($this->conn, $sql);
 
-        $sql = "CREATE TABLE IF NOT EXISTS `Twitter` 
-        (`creator_username` varchar(255) NOT NULL, 
-        `link` varchar(255) NOT NULL, 
+        $sql = "CREATE TABLE IF NOT EXISTS `Twitter`
+        (`twitter_username` varchar(255) NOT NULL,
+        `link` varchar(255) NOT NULL,
         `follower_count` varchar(255) NOT NULL)";
         $results = mysqli_query($this->conn, $sql);
 
 
         //temp deleted niche
-        $sql = "CREATE TABLE IF NOT EXISTS `creator_users` 
+        $sql = "CREATE TABLE IF NOT EXISTS `creator_users`
         (`firstname` varchar(255) NOT NULL,
         `lastname` varchar(255) NOT NULL,
         `password` varchar(255) NOT NULL,
         `email` varchar(255) NOT NULL UNIQUE,
-        `username` varchar(255) NOT NULL UNIQUE)
+        `niche_id` varchar(255) UNIQUE,
+        `username` varchar(255) NOT NULL UNIQUE,
+        `youtube_username` varchar(255) UNIQUE,
+        `facebook_username` varchar(255) UNIQUE,
+        `twitter_username` varchar(255) UNIQUE)
         ";
         $results = mysqli_query($this->conn, $sql);
-   
+
         $sql = "CREATE TABLE IF NOT EXISTS `business_users`
-        (`firstname` varchar(255) NOT NULL, 
-        `lastname` varchar(255) NOT NULL, 
+        (`firstname` varchar(255) NOT NULL,
+        `lastname` varchar(255) NOT NULL,
         `company` varchar(255) NOT NULL,
         `role` varchar(255) NOT NULL,
         `password` varchar(255) NOT NULL,
@@ -94,11 +98,11 @@ class DataBaseActions extends Exception{
 
             //adding user with 3 niche
 
-            $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `niche_id`)
+            $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `username`, `niche_id`, `youtube_username`, `facebook_username`, `twitter_username`)
             VALUES
-            ('test1', 'test1', 'test1@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'fashion')),
-            ('test2', 'test2', 'test2@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'cooking')),
-            ('test3', 'test3', 'test3@gmail.com', 'asd', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'))";
+            ('test1', 'test1', 'test1@gmail.com', 'asd', 'name1',(SELECT `id` FROM `niches` WHERE `name` = 'fashion'), 'youtube1', 'facebook1', 'twitter1'),
+            ('test2', 'test2', 'test2@gmail.com', 'asd', 'name2',(SELECT `id` FROM `niches` WHERE `name` = 'cooking'), 'youtube2', 'facebook2', 'twitter2'),
+            ('test3', 'test3', 'test3@gmail.com', 'asd', 'name3', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'), 'youtube3', 'facebook3', 'twitter3')";
             $results = mysqli_query($this->conn, $sql);
 
         }
@@ -110,7 +114,7 @@ class DataBaseActions extends Exception{
     public function addBusiness($firstname, $lastname, $company, $role, $password, $email){
         $sql = "INSERT INTO business_users (firstname, lastname, company, role, password, email)
         values ('$firstname','$lastname', '$company', '$role', '$password','$email')";
-        
+
         $results = mysqli_query($this->conn, $sql);
 
         //checking for error
@@ -203,6 +207,16 @@ class DataBaseActions extends Exception{
             }
         }
         return true;
+    }
+
+    public function getUsers(){
+        $sql = "SELECT * FROM creator_users";
+        $result = mysqli_query($this->conn, $sql);
+        //checking for error
+        if (!$result) {
+            die('Error executing query: ' . mysqli_error($this->conn));
+        }
+        return $result;
     }
 
 
