@@ -52,7 +52,7 @@
         <div class="flex h-50 mt4 justify-center">  
           <div class="flex w-90 yellowbackground">
             <!-- Username -->
-            <div class="mt4 mb4 ml4 mr4" style="text-align: left; font-size: 36px;">
+            <div class="mt4 mb4 ml4 mr4">
               <div class="" style="text-align: left; font-size: 36px;">
                 John Doe
               </div>
