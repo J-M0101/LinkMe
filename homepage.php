@@ -10,7 +10,7 @@
     <div class="titlebar">
       <div class="flex justify-between" >
         <div class="w-30">
-          <div class="pt2 logoText" style="witdth: 300px; text-align: center">
+          <div class="pt2 logoText" style="width: 300px; text-align: center">
             <span class = "pl2"><button class="bluebackground homebutton link grow bg-animate" type="button"><a href="homepage.php">LinkMe</a></button> </span><br>
             <span class="tagline">Linking Company and Creator<span>
           </div>
