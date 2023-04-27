@@ -51,13 +51,178 @@
         <!-- profile summary -->
         <div class="flex h-75 mt4 justify-center">  
           <div class="flex w-90 pt3 yellowbackground">
-            <div class="w-25">For You</div>
-            <div class="w-25">Trending</div>
-            <div class="w-25">Top Engagement</div>
-            <div class="w-25">Filter by</div>
+            <div class="w-25 flex-column">
+              <div class="bb bw1">For You</div>
+                <div class="pt3 containerOne">
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                </div>
+            </div>
+            <div class="w-25 flex-column">
+              <div class="bb bw1">Trending</div>
+                <div class="pt3 containerOne">
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                </div>
+            </div>
+            <div class="w-25 flex-column">
+              <div class="bb bw1">Top engagement</div>
+                <div class="pt3 containerOne">
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                </div>
+            </div>
+            <div class="w-25 flex-column">
+              <div class="bb bw1">Filter By</div>
+                <div class="pt3 containerOne">
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                  <div>test</div>
+                </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <footer class ="w-100 footer">
+      <div class ="pa4 pb6">
+        check
+      </div>
+    </footer>
   </body>
 </html>
