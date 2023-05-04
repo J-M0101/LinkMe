@@ -69,6 +69,9 @@ class DataBaseActions extends Exception{
         `youtube_username` varchar(255) UNIQUE,
         `facebook_username` varchar(255) UNIQUE,
         `twitter_username` varchar(255) UNIQUE,
+        `facebook_follower_count` varchar(255),
+        `twitter_follower_count` varchar(255),
+        `youtube_follower_count` varchar(255),
         `bio` varchar(1000))
         ";
         $results = mysqli_query($this->conn, $sql);
@@ -99,11 +102,11 @@ class DataBaseActions extends Exception{
 
             //adding user with 3 niche
 
-            $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `username`, `niche_id`, `youtube_username`, `facebook_username`, `twitter_username`, `bio`)
+            $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `username`, `niche_id`, `youtube_username`, `facebook_username`, `twitter_username`, `facebook_follower_count`, `twitter_follower_count`, `youtube_follower_count`,`bio`)
             VALUES
-            ('test1', 'test1', 'test1@gmail.com', 'asd', 'name1',(SELECT `id` FROM `niches` WHERE `name` = 'fashion'), 'youtube1', 'facebook1', 'twitter1', 'This is test1s bio!'),
-            ('test2', 'test2', 'test2@gmail.com', 'asd', 'name2',(SELECT `id` FROM `niches` WHERE `name` = 'cooking'), 'youtube2', 'facebook2', 'twitter2', 'This is test2s bio!'),
-            ('test3', 'test3', 'test3@gmail.com', 'asd', 'name3', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'), 'youtube3', 'facebook3', 'twitter3', 'This is test3s bio!')";
+            ('test1', 'test1', 'test1@gmail.com', 'asd', 'name1',(SELECT `id` FROM `niches` WHERE `name` = 'fashion'), 'youtube1', 'facebook1', 'twitter1', '1102', '1231', '1502', 'This is test1s bio!'),
+            ('test2', 'test2', 'test2@gmail.com', 'asd', 'name2',(SELECT `id` FROM `niches` WHERE `name` = 'cooking'), 'youtube2', 'facebook2', 'twitter2', '556', '822', '450', 'This is test2s bio!'),
+            ('test3', 'test3', 'test3@gmail.com', 'asd', 'name3', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'), 'youtube3', 'facebook3', 'twitter3', '1000', '1200', '1500', 'This is test3s bio!')";
             $results = mysqli_query($this->conn, $sql);
 
         }
