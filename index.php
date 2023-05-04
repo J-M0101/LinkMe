@@ -23,7 +23,24 @@
 
   </head>
   <body>
-    <div class="page items-center justify-center "> <!-- Used for display flex. helps to align boxes on pages to parent -->
+    <div class="page items-center justify-center flex-column"> <!-- Used for display flex. helps to align boxes on pages to parent -->
+      <div class="flex align-column statusmessage">
+        <?php
+          if(isset($_POST["submit"])){
+            if(!empty($_POST['email']) && !empty($_POST['password'])) {
+              $email = $_POST['email'];
+              $password = $_POST['password'];
+              $user_info = $db->login($email, $password);
+              if ($user_info == null) {
+                echo "Login Failed";
+              } else {
+                header("Location: homepage.php", true, 301);
+                exit();
+              }
+            }
+          }
+        ?>
+      </div>
       <div class="flex items-center ml7">
         <div class="mb6 mr6"> <!--sets a display box for all company name and title-->
           <a href = "index.php" class ="intro ma0 grow dib f3-ns no-underline">LinkMe</a>
@@ -56,20 +73,6 @@
                 <a href = "passwordreset.php" class="bn bluebutton grow dib f3-ns no-underline">Forgot Password?</a>
             </div>
           </form>
-          <?php
-            if(isset($_POST["submit"])){
-              if(!empty($_POST['email']) && !empty($_POST['password'])) {
-                $email = $_POST['email'];
-                $password = $_POST['password'];
-                $user_info = $db->login($email, $password);
-                if ($user_info == null) {
-                  echo "Login Failed.";
-                } else {
-                  echo "Login Successful.";
-                }
-              }
-            }
-          ?>
         </div>
       </div>
     </div>

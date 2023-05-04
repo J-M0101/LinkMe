@@ -23,7 +23,7 @@
               </form>
             </div>
             <div class="w-30">
-              <form action="trending.php" class="w-100" method="post">
+              <form action="trendingpage.php" class="w-100" method="post">
                   <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Trending">
               </form>
             </div>
