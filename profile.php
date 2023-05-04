@@ -33,11 +33,11 @@
     </div>
   <!-- Body -->
     <div class="flex h-100">
-      <!--Left Profile box-->
-      <div class="flex mt4 w-30 justify-center">
-        <div class="w-70 profile yellowbackground">
+      <!--Left Profile box -->
+      <div class="flexgrow mt4 w-30">
+        <div class="w-70 yellowbackground" style="margin: 0 auto;">
           <!-- Formatting for container of items -->
-          <div class="mt4 mb4 ml4 mr4";>
+          <div class="mt4 mb4 ml4 mr4">
             <!-- Header -->
             <div style="text-align: center; font-size: 36px;">
               Statistics
@@ -97,7 +97,7 @@
           </form>
         </div>
         <!-- profile summary -->
-        <div class="flex h-50 mt4 justify-center">  
+        <div class="flex h-60 mt4 justify-center">  
           <div class="flex w-90 yellowbackground">
             <!-- Username -->
             <div class="mt4 mb4 ml4 mr4">
