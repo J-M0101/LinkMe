@@ -84,7 +84,7 @@
                         7.6
                       </p>
                     </div>
-                    <div class="pr6 pt4 username"><?php echo $row["firstname"]; echo $row["lastname"];?></div>
+                    <div class="pr6 pt4 username"><a href="profile.php"><?php echo $row["firstname"]; echo $row["lastname"];?></a></div>
                   </div>
                 </div>
                 <div class="flex flex-column w-100 h-25 pt1">
