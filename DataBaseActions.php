@@ -258,40 +258,29 @@ class DataBaseActions extends Exception{
         return true;
     }
 
-    public function socialMediaButton($email,$social_media){
+    public function socialMediaButton($social_media){
         //generate random numbers of followers
         $follower_count = rand(1000, 500000);
 
         //make link
         $link = $social_media . ".com";
 
-        // Define an array of random names
-        $names = array("John", "Mary", "Peter", "Alice", "Bob");
-
-        // Choose a random name from the array
-        $username = $names[array_rand($names)];
-
-
-        //email -> find all info --> update the user
-
-
-        if ($social_media == "Youtube") {
-            //update creator_user
-            //add to table
-            $sql = "INSERT INTO Youtube (youtube_username, link, follower_count)
-            VALUES ('$username', '$link', '$follower_count')";
-        }elseif ($social_media == "Instagram"){
-            $sql = "INSERT INTO Youtube (instagram_username, link, follower_count)
-            VALUES ('$username', '$link', '$follower_count')";
+        if ($social_media == "YouTube") {
+            $sql = "UPDATE creator_users SET  youtube_follower_count='$follower_count' WHERE email='test1@gmail.com'";
+        }elseif ($social_media == "Facebook"){
+            $sql = "UPDATE creator_users SET  facebook_follower_count='$follower_count' WHERE email='test1@gmail.com'";
         }elseif ($social_media == "Twitter"){
-            $sql = "INSERT INTO Twitter (twitter_username, link, follower_count)
-            VALUES ('$username', '$link', '$follower_count')";
+            $sql = "UPDATE creator_users SET twitter_follower_count='$follower_count' WHERE email='test1@gmail.com'";
         }
-
-
         $results = mysqli_query($this->conn, $sql);
 
     }
+
+    public function getScore(){
+        $score = rand(0, 9) . rand(0, 9);
+        return $score;
+    }
+
 
 
 
