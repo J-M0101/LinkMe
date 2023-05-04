@@ -45,8 +45,8 @@ class DataBaseActions extends Exception{
         `follower_count` varchar(255) NOT NULL)";
         $results = mysqli_query($this->conn, $sql);
 
-        $sql = "CREATE TABLE IF NOT EXISTS `Instagram`
-        (`isntagram_username` varchar(255) NOT NULL,
+        $sql = "CREATE TABLE IF NOT EXISTS `Facebook`
+        (`facebook_username` varchar(255) NOT NULL,
         `link` varchar(255) NOT NULL,
         `follower_count` varchar(255) NOT NULL)";
         $results = mysqli_query($this->conn, $sql);
@@ -68,7 +68,8 @@ class DataBaseActions extends Exception{
         `username` varchar(255) NOT NULL UNIQUE,
         `youtube_username` varchar(255) UNIQUE,
         `facebook_username` varchar(255) UNIQUE,
-        `twitter_username` varchar(255) UNIQUE)
+        `twitter_username` varchar(255) UNIQUE,
+        `bio` varchar(1000))
         ";
         $results = mysqli_query($this->conn, $sql);
 
@@ -98,11 +99,11 @@ class DataBaseActions extends Exception{
 
             //adding user with 3 niche
 
-            $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `username`, `niche_id`, `youtube_username`, `facebook_username`, `twitter_username`)
+            $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `username`, `niche_id`, `youtube_username`, `facebook_username`, `twitter_username`, `bio`)
             VALUES
-            ('test1', 'test1', 'test1@gmail.com', 'asd', 'name1',(SELECT `id` FROM `niches` WHERE `name` = 'fashion'), 'youtube1', 'facebook1', 'twitter1'),
-            ('test2', 'test2', 'test2@gmail.com', 'asd', 'name2',(SELECT `id` FROM `niches` WHERE `name` = 'cooking'), 'youtube2', 'facebook2', 'twitter2'),
-            ('test3', 'test3', 'test3@gmail.com', 'asd', 'name3', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'), 'youtube3', 'facebook3', 'twitter3')";
+            ('test1', 'test1', 'test1@gmail.com', 'asd', 'name1',(SELECT `id` FROM `niches` WHERE `name` = 'fashion'), 'youtube1', 'facebook1', 'twitter1', 'This is test1s bio!'),
+            ('test2', 'test2', 'test2@gmail.com', 'asd', 'name2',(SELECT `id` FROM `niches` WHERE `name` = 'cooking'), 'youtube2', 'facebook2', 'twitter2', 'This is test2s bio!'),
+            ('test3', 'test3', 'test3@gmail.com', 'asd', 'name3', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'), 'youtube3', 'facebook3', 'twitter3', 'This is test3s bio!')";
             $results = mysqli_query($this->conn, $sql);
 
         }
@@ -137,6 +138,7 @@ class DataBaseActions extends Exception{
     public function addCreator($firstName, $lastName, $password,  $email, $username){
         $sql = "INSERT INTO creator_users (firstname, lastname, password, email, username)
         VALUES ('$firstName', '$lastName', '$password', '$email', '$username')";
+
         $results = mysqli_query($this->conn, $sql);
 
         if ($results) {
@@ -209,6 +211,26 @@ class DataBaseActions extends Exception{
         return true;
     }
 
+    public function getUser($username){
+        $sql = $sql = "SELECT * FROM creator_users WHERE username = '$username' ";
+        $result = mysqli_query($this->conn, $sql);
+        //checking for error
+        if (!$result) {
+            die('Error executing query: ' . mysqli_error($this->conn));
+        }
+        return $result;
+    }
+
+    public function getYoutube($username){
+        $sql = $sql = "SELECT * FROM YouTube WHERE youtube_username = '$username' ";
+        $result = mysqli_query($this->conn, $sql);
+        //checking for error
+        if (!$result) {
+            die('Error executing query: ' . mysqli_error($this->conn));
+        }
+        return $result;
+    }
+
     public function getUsers(){
         $sql = "SELECT * FROM creator_users";
         $result = mysqli_query($this->conn, $sql);
@@ -218,6 +240,7 @@ class DataBaseActions extends Exception{
         }
         return $result;
     }
+
 
 
     /**
@@ -231,6 +254,42 @@ class DataBaseActions extends Exception{
         }
         return true;
     }
+
+    public function socialMediaButton($email,$social_media){
+        //generate random numbers of followers
+        $follower_count = rand(1000, 500000);
+
+        //make link
+        $link = $social_media . ".com";
+
+        // Define an array of random names
+        $names = array("John", "Mary", "Peter", "Alice", "Bob");
+
+        // Choose a random name from the array
+        $username = $names[array_rand($names)];
+
+
+        //email -> find all info --> update the user
+
+
+        if ($social_media == "Youtube") {
+            //update creator_user
+            //add to table
+            $sql = "INSERT INTO Youtube (youtube_username, link, follower_count)
+            VALUES ('$username', '$link', '$follower_count')";
+        }elseif ($social_media == "Instagram"){
+            $sql = "INSERT INTO Youtube (instagram_username, link, follower_count)
+            VALUES ('$username', '$link', '$follower_count')";
+        }elseif ($social_media == "Twitter"){
+            $sql = "INSERT INTO Twitter (twitter_username, link, follower_count)
+            VALUES ('$username', '$link', '$follower_count')";
+        }
+
+
+        $results = mysqli_query($this->conn, $sql);
+
+    }
+
 
 
 }

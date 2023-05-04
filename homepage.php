@@ -85,7 +85,7 @@
                       </p>
                     </div>
                     <div class="pr6 pt4 username">
-                    <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["username"];?></a>
+                      <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["username"];?></a>
                     </div>
                   </div>
                 </div>
