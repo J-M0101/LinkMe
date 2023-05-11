@@ -64,7 +64,7 @@ class DataBaseActions extends Exception{
         `lastname` varchar(255) NOT NULL,
         `password` varchar(255) NOT NULL,
         `email` varchar(255) NOT NULL UNIQUE,
-        `niche_id` varchar(255) UNIQUE,
+        `niche_id` varchar(255),
         `username` varchar(255) NOT NULL UNIQUE,
         `youtube_username` varchar(255) UNIQUE,
         `facebook_username` varchar(255) UNIQUE,
@@ -104,9 +104,17 @@ class DataBaseActions extends Exception{
 
             $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `username`, `niche_id`, `youtube_username`, `facebook_username`, `twitter_username`, `facebook_follower_count`, `twitter_follower_count`, `youtube_follower_count`,`bio`)
             VALUES
-            ('test1', 'test1', 'test1@gmail.com', 'asd', 'name1',(SELECT `id` FROM `niches` WHERE `name` = 'fashion'), 'youtube1', 'facebook1', 'twitter1', '1102', '1231', '1502', 'This is test1s bio!'),
-            ('test2', 'test2', 'test2@gmail.com', 'asd', 'name2',(SELECT `id` FROM `niches` WHERE `name` = 'cooking'), 'youtube2', 'facebook2', 'twitter2', '556', '822', '450', 'This is test2s bio!'),
-            ('test3', 'test3', 'test3@gmail.com', 'asd', 'name3', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'), 'youtube3', 'facebook3', 'twitter3', '1000', '1200', '1500', 'This is test3s bio!')";
+            ('test1', 'test1', 'test1@gmail.com', '1234', 'name1',(SELECT `id` FROM `niches` WHERE `name` = 'fashion'), 'youtube1', 'facebook1', 'twitter1', '1102', '1231', '1502', 'This is test1s bio!'),
+            ('Megan', 'Bailey', 'megan.bailey1234@example.com', '1234', 'meganb', 'fitness', 'megan_fit', 'fit_megan', 'megfit', 23456, 89012, 78451, 'Fitness enthusiast and health coach. Passionate about helping others achieve their fitness goals.'),
+('Samantha', 'Reyes', 'samantha.reyes1234@example.com', '1234', 'samanthar', 'beauty', 'samantha_beauty', 'beauty_by_sam', 'samsbeauty', 12345, 23456, 56789, 'Makeup artist and beauty blogger. Sharing tips and tricks for achieving flawless looks.'),
+('Jared', 'Gonzalez', 'jared.gonzalez1234@example.com', '1234', 'jaredg', 'travel', 'jared_travel', 'globe_trotter', 'jaredeyetravel', 45678, 23456, 98765, 'Travel addict and adventure seeker. Sharing stories and photos from my trips around the world.'),
+('Isabella', 'Phillips', 'isabella.phillips1234@example.com', '1234', 'isabellap', 'food', 'isabella_foodie', 'yum_isabella', 'foodie_isa', 23456, 78901, 34567, 'Food lover and recipe developer. Sharing delicious and healthy meals for any occasion.'),
+('Connor', 'Bryant', 'connor.bryant1234@example.com', '1234', 'connorb', 'art', 'connor_photos', 'snapconnor', 'bryant_photography', 45678, 12345, 23456, 'Photographer and visual storyteller. Capturing the beauty of the world through my lens.'),
+('Olivia', 'Price', 'olivia.price1234@example.com', '1234', 'oliviap', 'fashion', 'olivia_fashion', 'fashionista_olivia', 'oliviastyle', 67890, 12345, 78901, 'Fashion lover and style influencer. Sharing my favorite looks and trends.'),
+('Brandon', 'Collins', 'brandon.collins1234@example.com', '1234', 'brandonc', 'music', 'brandon_music', 'musicbybrandon', 'brandon_collins', 12345, 56789, 90123, 'Musician and songwriter. Sharing my original songs and covers of my favorite artists.'),
+('Natalie', 'Mitchell', 'natalie.mitchell1234@example.com', '1234', 'nataliem', 'fitness', 'natalie_fitness', 'fitnat', 'mitchell_fit', 89012, 34567, 90123, 'Fitness coach and wellness enthusiast. Helping others live a healthy and balanced lifestyle.'),
+('David', 'Baker', 'david.baker1234@example.com', '1234', 'davidb', 'photos', 'david_photography', 'daveyephotography', 'baker_visuals', 45678, 90123, 78901, 'Photographer and videographer. Capturing the beauty of nature and the world around us.'),
+('Avery', 'Sanchez', 'avery.sanchez1234@example.com', '1234', 'averys', 'food', 'avery_foodie', 'yum_avery', 'sanchez_kitchen', 56789, 34567, 23440, 'I loveeeee fooood!')";
             $results = mysqli_query($this->conn, $sql);
 
         }
@@ -256,6 +264,15 @@ class DataBaseActions extends Exception{
             return false;
         }
         return true;
+    }
+
+    public function search($search_query){
+      $sql = "SELECT * FROM creator_users WHERE username = '$search_query' ";
+      $result = mysqli_query($this->conn, $sql);
+      if(mysqli_num_rows($result) == 1) {
+          return true;
+      }
+      return false;
     }
 
     public function socialMediaButton($email,$social_media){

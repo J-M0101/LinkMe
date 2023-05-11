@@ -152,7 +152,7 @@
               </div>
               <!-- Tags -->
               <div class="mt2 mb4" style="text-align: left; font-size: 16px; font-family: Arial;">
-                Tags: Mountain Climbing, Biking, Hiking
+                Tag: <?php echo $row["niche_id"];?>
               </div>
             </div>
           </div>

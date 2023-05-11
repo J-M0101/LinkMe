@@ -48,15 +48,17 @@
       <div class="w-60">
         <!-- search -->
         <div class="mt4" style="text-align: center">
-          <form action="smconnect.php" method="post">
-          <label class="pt1" for="search"></label>
-          <input class="w-70 pv3 centertext round" type="text" name="search" onfocus="this.value=''" value="search">
-          </form>
+          <form method="post">
+    <input type="text" name="search_query" placeholder="Search...">
+    <button type="submit" name="search">Search</button>
+</form>
+
         </div>
         <!-- profile summary -->
         <div class="container">
           <!-- First profile box (margin for first is different than the rest) -->
           <?php
+
           // Establish a connection to the database
         /*
           $conn = mysqli_connect("localhost", "root", "","LinkMe");
@@ -64,8 +66,33 @@
             die("Connection failed: " . mysqli_connect_error());
           }
           */
+          if (isset($_POST['search'])) {
+              $search_query = $_POST['search_query'];
 
-          $sql = "SELECT * FROM creator_users";
+              // construct SQL query
+
+              // execute query
+              $result = $db->search($search_query);
+
+              // display results
+              if ($result == true) {
+                ?>
+                <div class="profiletag flex flex-column yellowbackground">
+                  <div class="flex flex-column w-100 h-50 pt3 topbox">
+                    <div class="flex flex-row justify-around">
+                      <div class="pr6 pt4 username">
+                        <a href="profile.php?username=<?php echo   $search_query; ?>"><?php echo   $search_query ;?></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            <?php
+              } else {
+                  echo "No results found.";
+              }
+          } else {
+
           $result = $db->getUsers();
           if ($result === false) {
                   // query failed, print error message
@@ -81,7 +108,7 @@
                   <div class="flex flex-row justify-around">
                     <div class="flex circle justify-center">
                       <p class="username">
-                        7.6
+                        <?php echo $row["niche_id"]; ?>
                       </p>
                     </div>
                     <div class="pr6 pt4 username">
@@ -93,17 +120,17 @@
                   <div class="username">Statistics</div>
                 </div>
                 <div class="flex  flex-row w-100 h-50 justify-around topbox">
-                  <div class="w-100 mediatype"><?php echo $row["youtube_username"]; ?>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+                  <div class="w-100 mediatype">YouTube
+                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["youtube_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Subscribers: <?php echo $row["youtube_follower_count"]; ?></div>
                   </div>
-                  <div class="w-100 mediatype"><?php echo $row["facebook_username"]; ?>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+                  <div class="w-100 mediatype">Facebook
+                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["facebook_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Friends: <?php echo $row["facebook_follower_count"]; ?></div>
                   </div>
-                  <div class="w-100 mediatype"><?php echo $row["twitter_username"]; ?>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Sum:</div>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Engagement:</div>
+                  <div class="w-100 mediatype">Twitter
+                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["twitter_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Followers: <?php echo $row["twitter_follower_count"]; ?></div>
                   </div>
                 </div>
               </div>
@@ -115,6 +142,7 @@
           die();
           // Close the database connection
           //mysqli_close($conn);
+        }
           ?>
         </div>
 
