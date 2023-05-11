@@ -39,8 +39,6 @@ class DataBaseActions extends Exception{
         `name` varchar(255) NOT NULL, PRIMARY KEY (`id`))";
         $results = mysqli_query($this->conn, $sql);
 
-<<<<<<< HEAD
-=======
         $sql = "CREATE TABLE IF NOT EXISTS `YouTube`
         (`youtube_username` varchar(255) NOT NULL,
         `link` varchar(255) NOT NULL,
@@ -58,7 +56,6 @@ class DataBaseActions extends Exception{
         `link` varchar(255) NOT NULL,
         `follower_count` varchar(255) NOT NULL)";
         $results = mysqli_query($this->conn, $sql);
->>>>>>> d82336d8d83a7bbfe56711677ed4e4c1c63855cf
 
 
         //temp deleted niche
@@ -72,19 +69,10 @@ class DataBaseActions extends Exception{
         `youtube_username` varchar(255) UNIQUE,
         `facebook_username` varchar(255) UNIQUE,
         `twitter_username` varchar(255) UNIQUE,
-<<<<<<< HEAD
-        `youtube_link` varchar(255),
-        `youtube_count` varchar(255)),
-        `instagram_link` varchar(255),
-        `instagram_count` varchar(255),
-        `twitter_link` varchar(255),
-        `twitter_count` varchar(255))
-=======
         `facebook_follower_count` varchar(255),
         `twitter_follower_count` varchar(255),
         `youtube_follower_count` varchar(255),
         `bio` varchar(1000))
->>>>>>> d82336d8d83a7bbfe56711677ed4e4c1c63855cf
         ";
         $results = mysqli_query($this->conn, $sql);
 
@@ -116,11 +104,6 @@ class DataBaseActions extends Exception{
 
             $sql = "INSERT INTO `creator_users` (`firstname`, `lastname`, `email`, `password`, `username`, `niche_id`, `youtube_username`, `facebook_username`, `twitter_username`, `facebook_follower_count`, `twitter_follower_count`, `youtube_follower_count`,`bio`)
             VALUES
-<<<<<<< HEAD
-            ('test1', 'test1', 'test1@gmail.com', 'asd', 'name1',(SELECT `id` FROM `niches` WHERE `name` = 'fashion'), 'youtube1', 'facebook1', 'twitter1', NULL, NULL, NULL, NULL,NULL,NULL),
-            ('test2', 'test2', 'test2@gmail.com', 'asd', 'name2',(SELECT `id` FROM `niches` WHERE `name` = 'cooking'), 'youtube2', 'facebook2', 'twitter2',NULL, NULL, NULL, NULL,NULL,NULL),
-            ('test3', 'test3', 'test3@gmail.com', 'asd', 'name3', (SELECT `id` FROM `niches` WHERE `name` = 'gaming'), 'youtube3', 'facebook3', 'twitter3',NULL, NULL, NULL, NULL,NULL,NULL)";
-=======
             ('test1', 'test1', 'test1@gmail.com', '1234', 'name1',(SELECT `id` FROM `niches` WHERE `name` = 'fashion'), 'youtube1', 'facebook1', 'twitter1', '1102', '1231', '1502', 'This is test1s bio!'),
             ('Megan', 'Bailey', 'megan.bailey1234@example.com', '1234', 'meganb', 'fitness', 'megan_fit', 'fit_megan', 'megfit', 23456, 89012, 78451, 'Fitness enthusiast and health coach. Passionate about helping others achieve their fitness goals.'),
 ('Samantha', 'Reyes', 'samantha.reyes1234@example.com', '1234', 'samanthar', 'beauty', 'samantha_beauty', 'beauty_by_sam', 'samsbeauty', 12345, 23456, 56789, 'Makeup artist and beauty blogger. Sharing tips and tricks for achieving flawless looks.'),
@@ -132,7 +115,6 @@ class DataBaseActions extends Exception{
 ('Natalie', 'Mitchell', 'natalie.mitchell1234@example.com', '1234', 'nataliem', 'fitness', 'natalie_fitness', 'fitnat', 'mitchell_fit', 89012, 34567, 90123, 'Fitness coach and wellness enthusiast. Helping others live a healthy and balanced lifestyle.'),
 ('David', 'Baker', 'david.baker1234@example.com', '1234', 'davidb', 'photos', 'david_photography', 'daveyephotography', 'baker_visuals', 45678, 90123, 78901, 'Photographer and videographer. Capturing the beauty of nature and the world around us.'),
 ('Avery', 'Sanchez', 'avery.sanchez1234@example.com', '1234', 'averys', 'food', 'avery_foodie', 'yum_avery', 'sanchez_kitchen', 56789, 34567, 23440, 'I loveeeee fooood!')";
->>>>>>> d82336d8d83a7bbfe56711677ed4e4c1c63855cf
             $results = mysqli_query($this->conn, $sql);
 
         }
@@ -169,7 +151,7 @@ class DataBaseActions extends Exception{
         VALUES ('$firstName', '$lastName', '$password', '$email', '$username')";
 
         $results = mysqli_query($this->conn, $sql);
-        //what this do
+
         if ($results) {
             $userId = mysqli_insert_id($this->conn);
             return $userId;
@@ -284,9 +266,6 @@ class DataBaseActions extends Exception{
         return true;
     }
 
-<<<<<<< HEAD
-    public function socialMediaButton($social_media){
-=======
     public function search($search_query){
       $sql = "SELECT * FROM creator_users WHERE username = '$search_query' ";
       $result = mysqli_query($this->conn, $sql);
@@ -297,30 +276,12 @@ class DataBaseActions extends Exception{
     }
 
     public function socialMediaButton($email,$social_media){
->>>>>>> d82336d8d83a7bbfe56711677ed4e4c1c63855cf
         //generate random numbers of followers
         $follower_count = rand(1000, 500000);
 
         //make link
         $link = $social_media . ".com";
 
-<<<<<<< HEAD
-        if ($social_media == "YouTube") {
-            $sql = "UPDATE creator_users SET  youtube_count='$follower_count' WHERE email='test1@gmail.com'";
-        }elseif ($social_media == "Facebook"){
-            $sql = "UPDATE creator_users SET  facebook_count='$follower_count' WHERE email='test1@gmail.com'";
-        }elseif ($social_media == "Twitter"){
-            $sql = "UPDATE creator_users SET twitter_count='$follower_count' WHERE email='test1@gmail.com'";
-        }
-        $results = mysqli_query($this->conn, $sql);
-
-    }
-    
-    public function getScore(){
-        $score = rand(0, 9) . rand(0, 9);
-        return $score;
-    }
-=======
         // Define an array of random names
         $names = array("John", "Mary", "Peter", "Alice", "Bob");
 
@@ -350,7 +311,6 @@ class DataBaseActions extends Exception{
     }
 
 
->>>>>>> d82336d8d83a7bbfe56711677ed4e4c1c63855cf
 
 }
 ?>

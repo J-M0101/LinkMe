@@ -125,6 +125,9 @@
               <div style="text-align: left; font-size: 36px;">
                 <?php echo $_GET["username"];?>
               </div>
+              <div style="text-align: left; font-size: 20px;">
+                <a href = "mailto: <?php echo $row["email"];?>">Send Email</a>
+              </div>
               <!-- Icons -->
               <div class="mt2 mb2" style="text-align: left; font-size: 16px;">
                 <svg width="24" height="24" viewBox="0 0 24 24" style="margin-right: 10px;">
