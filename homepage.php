@@ -12,26 +12,31 @@
   </head>
   <body style="background-color:#36413D">
     <!-- Titlebar -->
-    <div class="titlebar">
-      <div class="flex justify-between" >
-        <div class="w-30">
-          <div class="pt2 logoText" style="width: 300px; text-align: center">
-            <span class = "pl2"><button class="bluebackground homebutton link grow bg-animate" type="button"><a href="homepage.php">LinkMe</a></button> </span><br>
-            <span class="tagline">Linking Company and Creator<span>
+    <div class="flex justify-around titlebar">
+      <!-- left title -->
+      <div class="pt2 logoText w-40" style="width: 300px; text-align: center">
+        <span class = "pl2"><button class="bluebackground homebutton link grow bg-animate" type="button"><a href="homepage.php">LinkMe</a></button> </span><br>
+        <span class="tagline">Linking Company and Creator<span>
+      </div>
+      <!-- middle title -->
+      <div class="flex ml7  w-30"></div>
+      <!-- Right title -->
+      <div class="flex pt4 ml5 w-30">
+        <div class="titletext w-100 flex" style="justify-around">
+          <div class="mr3">
+            <form action="profile.php" class="w-100" method="post">
+              <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Profile">
+            </form>
           </div>
-        </div>
-        <div class="flex pt4 w-70">
-          <div class="titletext w-100 flex" style="justify-content: center;">
-            <div class="w-20">
-              <form action="profile.php" class="w-100" method="post">
-                <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Profile">
-              </form>
-            </div>
-            <div class="mr6 pr4">
-              <form action="trendingpage.php" class="w-100" method="post">
-                  <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Trending">
-              </form>
-            </div>
+          <div class="mr3">
+            <form action="trendingpage.php" class="w-100" method="post">
+              <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Trending">
+            </form>
+          </div>
+          <div>
+            <form action="index.php" class="w-100" method="post">
+              <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Logout">
+            </form>
           </div>
         </div>
       </div>
@@ -39,10 +44,7 @@
     <!-- Body -->
     <div class="flex">
       <!--Left Profile box-->
-      <div class="flex mt4 w-30 justify-center">
-        <div class="w-70 profile yellowbackground">
-          text
-        </div>
+      <div class="flex mt4 w-20 justify-center">
       </div>
       <!-- middle column -->
       <div class="w-60">
@@ -50,7 +52,7 @@
         <div class="mt4" style="text-align: center">
           <form method="post">
     <input class= "w-70 pv3 centertext round"  type="text" name="search_query" placeholder="Search...">
-    <button type="submit" name="search">Search</button>
+    <button class="round" type="submit" name="search">Search</button>
 </form>
 
         </div>
