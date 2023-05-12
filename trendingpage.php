@@ -37,22 +37,16 @@
       </div>
     </div>
   <!-- Body -->
-    <div class="flex h-100">
-      <!--Left Profile box-->
-      <div class="flex mt4 w-30 justify-center">
-        <div class="w-70 profile yellowbackground">
-          text
-        </div>
-      </div>
+    <div class="flex mt5 justify-center h-100">
       <!-- middle column -->
       <div class="w-60">
         <!-- search -->
-        <div class="mt4 mb4 " style="text-align: center">
+        <!-- <div class="mt4 mb4 " style="text-align: center">
           <form action="smconnect.php" method="post">
           <label class="pt1" for="search"></label>
           <input class="w-70 pv3 centertext round" type="text" name="search" onfocus="this.value=''" value="search">
           </form>
-        </div>
+        </div> -->
         <!-- profile summary -->
         <div class="flex h-75 mt4 justify-center">  
           <div class="flex w-90 pt3 yellowbackground">
