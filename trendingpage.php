@@ -7,30 +7,28 @@
   </head>
   <body style="background-color:#36413D">
   <!-- Titlebar -->
-  <div class="flex justify-around titlebar">
+  <div class="flex justify-between titlebar">
       <!-- left title -->
-      <div class="pt2 logoText w-40" style="width: 300px; text-align: center">
+      <div class="pt2 logoText" style="width: 300px; text-align: center">
         <span class = "pl2"><button class="bluebackground homebutton link grow bg-animate" type="button"><a href="homepage.php">LinkMe</a></button> </span><br>
         <span class="tagline">Linking Company and Creator<span>
       </div>
-      <!-- middle title -->
-      <div class="flex ml7  w-30"></div>
       <!-- Right title -->
-      <div class="flex pt4 ml5 w-30">
-        <div class="titletext w-100 flex" style="justify-around">
-          <div class="mr3">
+      <div class="flex pt4">
+        <div class="titletext w-100 flex" style="justify-between">
+          <div class="mr2">
             <form action="profile.php" class="w-100" method="post">
               <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Profile">
             </form>
           </div>
-          <div class="mr3">
+          <div class="mr2">
             <form action="trendingpage.php" class="w-100" method="post">
               <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Trending">
             </form>
           </div>
           <div>
             <form action="index.php" class="w-100" method="post">
-              <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Logout">
+              <input class="w-100 mr3 bluebackground link grow bg-animate" type="submit" value="Logout">
             </form>
           </div>
         </div>
