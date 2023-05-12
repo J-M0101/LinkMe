@@ -77,16 +77,16 @@
       </div>
     </div>
     <div class="page justify-around">
-      <div class="greybackground flex w-50 pa5 mr6 mb7 grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow">
-          <p class = "w-100">Test message</p>
+      <div class="greybackground flex w-50 pa5 mr6 mb7 grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" style="text-align: left; font-size: 24px; font-family: Arial;">
+          <p class = "w-100">Welcome to our platform, the premier community-driven marketplace that connects content creators with brands for sponsored opportunities. Our platform was designed to simplify the process of finding and collaborating with the perfect creator for your brand, and to empower content creators to monetize their content creation. We believe in fostering strong relationships between brands and creators and are committed to making the process more efficient, authentic, and impactful.</p>
       </div>
-      <div class="yellowbackground flex w-50 pa5 ml6 mt7 grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow">
-          <p class = "w-100">Test message</p>
+      <div class="yellowbackground flex w-50 pa5 ml6 mt7 grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" style="text-align: left; font-size: 24px; font-family: Arial;">
+          <p class = "w-100">Our platform provides a variety of tools and features to help creators find partnerships. We connect creators with sponsored opportunities from many brands, and provide discoverability for their unique talents and voice. Brands can find and collaborate with carefully vetted creators to create authentic and impactful content collaborations. Our platform values creativity, transparency, and inclusivity, and we believe that empowering these authentic partnerships is essential to creating meaningful content that resonates with audiences.</p>
       </div>
     </div>
-    <div class="page w-100 justify-center pt6">
-      <div class="flex ba align-center items-center justify-center w-50 mb5 round">
-          test
+    <div class="page w-100 justify-center pt6 mb6">
+      <div class="flex ba align-center items-center justify-center w-50 pa5 ml6 round" style="text-align: left; font-size: 24px; font-family: Arial;">
+      <p class = "w-100">We believe that by fostering a community of creators and brands, we can create a positive impact on the content creation industry. We believe that every creator has the potential to create unique and impactful content, and every brand can find the right creator to work with. Join our community today and start creating meaningful content collaborations!</p>
       </div>
     </div>
 

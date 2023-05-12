@@ -100,10 +100,10 @@
       <div class="w-60">
         <!-- search -->
         <div class="mt4 mb4" style="text-align: center">
-          <form action="smconnect.php" method="post">
-          <label class="pt1" for="search"></label>
-          <input class="w-70 pv3 centertext round" type="text" name="search" onfocus="this.value=''" value="search">
-          </form>
+        <form method="post">
+    <input class= "w-70 pv3 centertext round"  type="text" name="search_query" placeholder="Search...">
+    <button type="submit" name="search">Search</button>
+</form>
         </div>
         <!-- profile summary -->
         <div class="flex h-60 mt4 justify-center">

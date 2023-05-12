@@ -49,7 +49,7 @@
         <!-- search -->
         <div class="mt4" style="text-align: center">
           <form method="post">
-    <input type="text" name="search_query" placeholder="Search...">
+    <input class= "w-70 pv3 centertext round"  type="text" name="search_query" placeholder="Search...">
     <button type="submit" name="search">Search</button>
 </form>
 
@@ -77,7 +77,7 @@
               // display results
               if ($result == true) {
                 ?>
-                <div class="profiletag flex flex-column yellowbackground">
+                <div class="profiletag mt3 flex flex-column yellowbackground">
                   <div class="flex flex-column w-100 h-50 pt3 topbox">
                     <div class="flex flex-row justify-around">
                       <div class="pr6 pt4 username">
@@ -103,12 +103,12 @@
             while($row = mysqli_fetch_assoc($result)) {
               // Print the data you want to display
               ?>
-              <div class="profiletag flex flex-column yellowbackground">
+              <div class="profiletag mt3 flex flex-column yellowbackground">
                 <div class="flex flex-column w-100 h-50 pt3 topbox">
                   <div class="flex flex-row justify-around">
                     <div class="flex circle justify-center">
                       <p class="username">
-                        <?php echo $row["niche_id"]; ?>
+                        <?php echo $row["engagement"]; ?>
                       </p>
                     </div>
                     <div class="pr6 pt4 username">
