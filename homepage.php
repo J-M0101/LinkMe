@@ -12,7 +12,7 @@
   </head>
   <body style="background-color:#36413D">
     <!-- Titlebar -->
-    <div class="flex justify-around titlebar">
+    <div class="flex w-100 justify-around titlebar">
       <!-- left title -->
       <div class="pt2 logoText w-40" style="width: 300px; text-align: center">
         <span class = "pl2"><button class="bluebackground homebutton link grow bg-animate" type="button"><a href="homepage.php">LinkMe</a></button> </span><br>
