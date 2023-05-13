@@ -112,31 +112,31 @@
                 <div class="flex flex-column w-100 h-50 pt3 topbox">
                   <div class="flex flex-row justify-around">
                     <div class="flex circle justify-center">
-                      <p class="companyname">
-                        <?php echo $row["niche"]; ?>
+                      <p class="companyname" style="font-family: Arial;">
+                        <b><?php echo $row["niche"]; ?></b>
                       </p>
                     </div>
-                    <div class="pr6 pt3 username">
+                    <div class="pr6 pt3 username" style="font-size: 50px;">
                       <a href="profile.php?username=<?php echo $row["firstname"]; ?>"><?php echo $row["firstname"];?>  <?php echo $row["lastname"];?></a>
-                      <div class="companyname"><?php echo $row["role"];?></div>
+                      <div class="companyname" style="font-family: Arial;"><b><?php echo $row["role"];?></b></div>
                     </div>
                   </div>
                 </div>
                 <div class="flex flex-column w-100 pt3">
-                  <div class="username"><?php echo $row["company"]; ?></div>
+                  <div class="username" style="font-size:30px;"><?php echo $row["company"]; ?></div>
                 </div>
                 <div class="flex  flex-row w-100 h-50 justify-around topbox">
-                  <div class="w-100 mediatype">YouTube
-                    <div class="pt3 pl3 accountname" style="text-align:center">Username: <?php echo $row["sm_username"]; ?></div>
-                    <div class="pt3 pl3 accountname" style="text-align:center">Subscribers: <?php echo $row["youtube_count"]; ?></div>
+                  <div class="w-100 mediatype" style="font-family: Arial;"><b>YouTube</b>
+                    <div class="pt3 pl3 accountname" style="text-align:left; font-family: Arial;">Username: <?php echo $row["sm_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left; font-family: Arial;">Subscribers: <?php echo $row["youtube_count"]; ?></div>
                   </div>
-                  <div class="w-100 mediatype">Facebook
-                    <div class="pt3 pl3 accountname" style="text-align:center">Username: <?php echo $row["sm_username"]; ?></div>
-                    <div class="pt3 pl3 accountname" style="text-align:center">Likes: <?php echo $row["facebook_count"]; ?></div>
+                  <div class="w-100 mediatype" style="font-family: Arial;"><b>Facebook</b>
+                    <div class="pt3 pl3 accountname" style="text-align:left; font-family: Arial;">Username: <?php echo $row["sm_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left; font-family: Arial;">Likes: <?php echo $row["facebook_count"]; ?></div>
                   </div>
-                  <div class="w-100 mediatype">Twitter
-                    <div class="pt3 pl3 accountname" style="text-align:center">Username: <?php echo $row["sm_username"]; ?></div>
-                    <div class="pt3 pl3 accountname" style="text-align: center">Followers: <?php echo $row["twitter_count"]; ?></div>
+                  <div class="w-100 mediatype" style="font-family: Arial;"><b>Twitter</b>
+                    <div class="pt3 pl3 accountname" style="text-align:left; font-family: Arial;">Username: <?php echo $row["sm_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left; font-family: Arial;">Followers: <?php echo $row["twitter_count"]; ?></div>
                   </div>
                 </div>
               </div>
