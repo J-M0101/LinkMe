@@ -1,6 +1,6 @@
 <html style="background-color:#36413D">
   <head>
-  <title>Company Home Page</title>
+  <title>Home Page</title>
   <?php
     include "head.php";
     require_once("include.php");
@@ -24,6 +24,11 @@
           <div class="mr2">
             <form action="userprofile.php" class="w-100" method="post">
               <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Profile">
+            </form>
+          </div>
+          <div class="mr2">
+            <form action="companyhomepage.php" class="w-100" method="post">
+              <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Companies">
             </form>
           </div>
           <div class="mr2">
@@ -93,7 +98,7 @@
               }
           } else {
 
-          $result = $db->getUsers();
+          $result = $db->getCompany();
           if ($result === false) {
                   // query failed, print error message
                   echo "Error: " . mysqli_error($conn);
@@ -101,36 +106,37 @@
           if (mysqli_num_rows($result) > 0) {
             // Output data of each row
             while($row = mysqli_fetch_assoc($result)) {
-              // Print the data you want to display
+              // Print the data you want to displayd
               ?>
               <div class="profiletag mt3 flex flex-column yellowbackground">
                 <div class="flex flex-column w-100 h-50 pt3 topbox">
                   <div class="flex flex-row justify-around">
                     <div class="flex circle justify-center">
-                      <p class="username">
-                        <?php echo $row["engagement"]; ?>
+                      <p class="companyname">
+                        <?php echo $row["niche"]; ?>
                       </p>
                     </div>
-                    <div class="pr6 pt4 username">
-                      <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["username"];?></a>
+                    <div class="pr6 pt3 username">
+                      <a href="profile.php?username=<?php echo $row["firstname"]; ?>"><?php echo $row["firstname"];?>  <?php echo $row["lastname"];?></a>
+                      <div class="companyname"><?php echo $row["role"];?></div>
                     </div>
                   </div>
                 </div>
-                <div class="flex flex-column w-100 h-25 pt1">
-                  <div class="username">Statistics</div>
+                <div class="flex flex-column w-100 pt3">
+                  <div class="username"><?php echo $row["company"]; ?></div>
                 </div>
                 <div class="flex  flex-row w-100 h-50 justify-around topbox">
                   <div class="w-100 mediatype">YouTube
-                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["youtube_username"]; ?></div>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Subscribers: <?php echo $row["youtube_follower_count"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["sm_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Subscribers: <?php echo $row["youtube_count"]; ?></div>
                   </div>
                   <div class="w-100 mediatype">Facebook
-                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["facebook_username"]; ?></div>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Friends: <?php echo $row["facebook_follower_count"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["sm_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Likes: <?php echo $row["facebook_count"]; ?></div>
                   </div>
                   <div class="w-100 mediatype">Twitter
-                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["twitter_username"]; ?></div>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Followers: <?php echo $row["twitter_follower_count"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["sm_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:left">Followers: <?php echo $row["twitter_count"]; ?></div>
                   </div>
                 </div>
               </div>
