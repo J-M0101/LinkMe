@@ -27,6 +27,11 @@
             </form>
           </div>
           <div class="mr2">
+            <form action="companyhomepage.php" class="w-100" method="post">
+              <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Companies">
+            </form>
+          </div>
+          <div class="mr2">
             <form action="trendingpage.php" class="w-100" method="post">
               <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Trending">
             </form>

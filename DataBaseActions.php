@@ -83,7 +83,12 @@ class DataBaseActions extends Exception{
         `company` varchar(255) NOT NULL,
         `role` varchar(255) NOT NULL,
         `password` varchar(255) NOT NULL,
-        `email` varchar(255) NOT NULL UNIQUE)
+        `email` varchar(255) NOT NULL UNIQUE,
+        `sm_username` varchar(255) UNIQUE,
+        `facebook_count` varchar(255),
+        `twitter_count` varchar(255),
+        `youtube_count` varchar(255),
+        `niche` varchar(255))
         ";
         $results = mysqli_query($this->conn, $sql);
 
@@ -127,31 +132,30 @@ class DataBaseActions extends Exception{
             ('Benjamin', 'Lee', 'benjamin.lee5678@example.com', '5678', 'benl', '6.3', 'photos', 'benjamin_photo', 'lee_visuals', 'benjaminleephotography', 78901, 23456, 12345, 'Professional photographer specializing in commercial and product photography. Helping businesses showcase their products in the best possible light.')";
             $results = mysqli_query($this->conn, $sql);
 
-
-            $sql = "INSERT INTO `business_users` (`firstname`, `lastname`, `company`, `role`, `password`, `email`)
+            $sql = "INSERT INTO `business_users` (`firstname`, `lastname`, `company`, `role`, `password`, `email`,`sm_username`, `facebook_count`, `twitter_count`, `youtube_count`,`niche` )
             VALUES
-            ('test1', 'test1','Roku','Marketing Manager','1234', 'Roku@gmail.com'),
-            ('John', 'Doe', 'Acme Corporation', 'Marketing Manager', '555-1234', 'johndoe@acmecorp.com'),
-            ('Amy', 'Johnson', 'XYZ Inc', 'Sales Manager', '555-5678', 'amyjohnson@xyzinc.com'),
-            ('David', 'Chen', 'ABC Company', 'HR Director', '555-4321', 'davidchen@abccompany.com'),
-            ('Sarah', 'Lee', 'MNO Enterprises', 'Marketing Coordinator', '555-8765', 'sarahlee@mnoenterprises.com'),
-            ('Michael', 'Nguyen', 'PQR Corp', 'IT Manager', '555-9876', 'michaelnguyen@pqrcorp.com'),
-            ('Stephanie', 'Kumar', 'LMN Industries', 'Finance Director', '555-5555', 'stephaniekumar@lmnindustries.com'),
-            ('Jonathan', 'Wang', 'JKL Co', 'Operations Manager', '555-2468', 'jonathanwang@jklco.com'),
-            ('Lauren', 'Tan', 'UVW Solutions', 'Project Coordinator', '555-1357', 'laurentan@uvwsolutions.com'),
-            ('William', 'Ng', 'EFG Inc', 'Product Manager', '555-3691', 'williamng@efginc.com'),
-            ('Amanda', 'Gupta', 'HIJ Corporation', 'Marketing Analyst', '555-7777', 'amandagupta@hijcorp.com'),
-            ('Eric', 'Kim', 'NOP Industries', 'Sales Director', '555-2468', 'erickim@nopindustries.com'),
-            ('Jennifer', 'Tran', 'STU Corp', 'Finance Analyst', '555-6789', 'jennifertran@stucorp.com'),
-            ('Christopher', 'Liu', 'VWX Enterprises', 'IT Director', '555-3456', 'christopherliu@vwxenterprises.com'),
-            ('Melissa', 'Park', 'GHI Co', 'Operations Coordinator', '555-8901', 'melissapark@ghico.com'),
-            ('Matthew', 'Kwok', 'DEF Corporation', 'Sales Analyst', '555-2109', 'matthewkwok@defcorp.com'),
-            ('Emily', 'Garcia', 'QRS Solutions', 'Marketing Director', '555-4444', 'emilygarcia@qrssolutions.com'),
-            ('Joshua', 'Wu', 'BCD Industries', 'Project Manager', '555-9632', 'joshuawu@bcdindustries.com'),
-            ('Megan', 'Huang', 'PQR Enterprises', 'HR Coordinator', '555-7890', 'meganhuang@pqrenterprises.com'),
-            ('Kevin', 'Chang', 'XYZ Corp', 'Product Analyst', '555-1470', 'kevinchang@xyzcorp.com'),
-            ('Sophia', 'Zhang', 'LMN Co', 'Marketing Coordinator', '555-3210', 'sophiazhang@lmnco.com'),
-            ('Daniel', 'Lau', 'JKL Enterprises', 'Operations Analyst', '555-7539', 'daniellau@jklenterprises.com')";
+            ('test1', 'test1','Roku','Marketing Manager','1234', 'Roku@gmail.com', 'Roku', 23456, 89012, 78451, 'Fashion'),
+            ('John', 'Doe', 'Acme Corporation', 'Marketing Manager', '555-1234', 'johndoe@acmecorp.com', 'Acme Corp', 78901, 23456, 12345, 'Health'),
+            ('Amy', 'Johnson', 'XYZ Inc', 'Sales Manager', '555-5678', 'amyjohnson@xyzinc.com', 'XYZMedia', 23456, 89012, 78451, 'Fitness'),
+            ('David', 'Chen', 'ABC Company', 'HR Director', '555-4321', 'davidchen@abccompany.com', 'ABCmedia',12345, 23456, 56789, 'Travel'),
+            ('Sarah', 'Lee', 'MNO Enterprises', 'Marketing Coordinator', '555-8765', 'sarahlee@mnoenterprises.com', 'MNOEnterprises', 45678, 23456, 98765, 'Cooking'),
+            ('Michael', 'Nguyen', 'PQR Corp', 'IT Manager', '555-9876', 'michaelnguyen@pqrcorp.com','PQR', 23456, 78901, 34567, 'Gaming'),
+            ('Stephanie', 'Kumar', 'LMN Industries', 'Finance Director', '555-5555', 'stephaniekumar@lmnindustries.com', 'LMNMedia', 45678, 12345, 23456, 'Education'),
+            ('Jonathan', 'Wang', 'JKL Co', 'Operations Manager', '555-2468', 'jonathanwang@jklco.com', 'JKL', 67890, 12345, 78901, 'Pets'),
+            ('Lauren', 'Tan', 'UVW Solutions', 'Project Coordinator', '555-1357', 'laurentan@uvwsolutions.com', 'UVW', 12345, 56789, 90123, 'DIY'),
+            ('William', 'Ng', 'EFG Inc', 'Product Manager', '555-3691', 'williamng@efginc.com', 'EFG', 89012, 34567, 90123, 'Technology'),
+            ('Amanda', 'Gupta', 'HIJ Corporation', 'Marketing Analyst', '555-7777', 'amandagupta@hijcorp.com', 'HIJMedia', 45678, 90123, 78901, 'Entertainment'),
+            ('Eric', 'Kim', 'NOP Industries', 'Sales Director', '555-2468', 'erickim@nopindustries.com', 'NOP', 56789, 34567, 23440, 'Finance'),
+            ('Jennifer', 'Tran', 'STU Corp', 'Finance Analyst', '555-6789', 'jennifertran@stucorp.com', 'STUCorp', 78901, 23456, 12345, 'Sports'),
+            ('Christopher', 'Liu', 'VWX Enterprises', 'IT Director', '555-3456', 'christopherliu@vwxenterprises.com', 'VWXMedia', 45678, 90123, 78901, 'Beauty'),
+            ('Melissa', 'Park', 'GHI Co', 'Operations Coordinator', '555-8901', 'melissapark@ghico.com', 'GHI', 78901, 23456, 12345, 'Music'),
+            ('Matthew', 'Kwok', 'DEF Corporation', 'Sales Analyst', '555-2109', 'matthewkwok@defcorp.com', 'DEF', 45678, 90123, 78901, 'Art'),
+            ('Emily', 'Garcia', 'QRS Solutions', 'Marketing Director', '555-4444', 'emilygarcia@qrssolutions.com', 'QRS', 78901, 23456, 12345, 'Photography'),
+            ('Joshua', 'Wu', 'BCD Industries', 'Project Manager', '555-9632', 'joshuawu@bcdindustries.com', 'BCDMedia', 45678, 90123, 78901, 'Books'),
+            ('Megan', 'Huang', 'PQR Enterprises', 'HR Coordinator', '555-7890', 'meganhuang@pqrenterprises.com', 'PQRmedia', 78901, 23456, 12345, 'Marketing'),
+            ('Kevin', 'Chang', 'XYZ Corp', 'Product Analyst', '555-1470', 'kevinchang@xyzcorp.com', 'XYZCorp', 45678, 90123, 78901, 'History'),
+            ('Sophia', 'Zhang', 'LMN Co', 'Marketing Coordinator', '555-3210', 'sophiazhang@lmnco.com', 'LMN', 78901, 23456, 12345, 'Politics'),
+            ('Daniel', 'Lau', 'JKL Enterprises', 'Operations Analyst', '555-7539', 'daniellau@jklenterprises.com', 'JKLEnterprise', 23456, 89012, 78451, 'Social Media')";
             $results = mysqli_query($this->conn, $sql);
 
         }
@@ -289,6 +293,15 @@ class DataBaseActions extends Exception{
         return $result;
     }
 
+    public function getCompany(){
+        $sql = "SELECT * FROM business_users";
+        $result = mysqli_query($this->conn, $sql);
+        //checking for error
+        if (!$result) {
+            die('Error executing query: ' . mysqli_error($this->conn));
+        }
+        return $result;
+    }
 
 
     /**
@@ -311,6 +324,16 @@ class DataBaseActions extends Exception{
       }
       return false;
     }
+
+    public function searchCompany($search_query){
+        $sql = "SELECT * FROM business_user WHERE company = '$search_queryOne' ";
+        $result = mysqli_query($this->conn, $sql);
+        if(mysqli_num_rows($result) == 1) {
+            return true;
+        }
+        return false;
+      }
+    
 
     public function socialMediaButton($email,$social_media){
         //generate random numbers of followers
