@@ -114,7 +114,7 @@
             <!-- Username -->
             <?php
             // Establish a connection to the database
-          /*
+            /*
             $conn = mysqli_connect("localhost", "root", "","LinkMe");
             if (!$conn) {
               die("Connection failed: " . mysqli_connect_error());
@@ -124,7 +124,7 @@
             $result = $db->getUser($_GET["username"]);
             $row = mysqli_fetch_assoc($result);
             ?>
-            <div class="mt4 mb4 ml4 mr4">
+            <div class="mt4 mb4 ml4 mr4 w-40">
               <div style="text-align: left; font-size: 36px;">
                 <?php echo $_GET["username"];?>
               </div>
@@ -160,6 +160,37 @@
               <div class="mt2 mb4" style="text-align: left; font-size: 16px; font-family: Arial;">
                 Tag: <?php echo $row["niche_id"];?>
               </div>
+            </div>
+            <div class="pa3 w-60">
+              <table class="charts-css column show-heading show-labels show-primary-axis show-4-secondary-axes show-data-axes data-spacing-15 hide-data">
+                <caption> Follower Ratio </caption>
+
+                <thead>
+                  <tr>
+                    <th scope="col"> Year </th>
+                    <th scope="col"> Value </th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <th> Youtube </th>
+                    <td style="--size:0.20;"></td>
+                  </tr>
+                  <tr>
+                    <th> Instagram </th>
+                    <td style="--size:0.49;"></td>
+                  </tr>
+                  <tr>
+                    <th> Twitter </th>
+                    <td style="--size:0.49;"></td>
+                  </tr>
+                  <tr>
+                    <th> Facebook </th>
+                    <td style="--size:0.3;"></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
