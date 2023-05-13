@@ -3,6 +3,11 @@
   <title>Home Page</title>
   <?php
     include "head.php";
+    require_once("include.php");
+    require_once("DataBaseActions.php");
+    $db = new DataBaseActions();
+    // include "DataBaseActions.php";
+    // $db = new DataBaseActions();
 ?>
   </head>
   <body style="background-color:#36413D">
@@ -17,13 +22,8 @@
       <div class="flex pt4">
         <div class="titletext w-100 flex" style="justify-between">
           <div class="mr2">
-            <form action="userprofile.php" class="w-100" method="post">
+            <form action="profile.php" class="w-100" method="post">
               <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Profile">
-            </form>
-          </div>
-          <div class="mr2">
-            <form action="companyhomepage.php" class="w-100" method="post">
-              <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Companies">
             </form>
           </div>
           <div class="mr2">
@@ -52,171 +52,203 @@
         </div> -->
         <!-- profile summary -->
         <div class="flex h-75 mt4 justify-center">  
-          <div class="flex w-90 pt3 yellowbackground">
-            <div class="w-25 flex-column">
+          <div class="flex w-90 justify-center pt3 yellowbackground">
+            <div class="w-33 flex-column">
               <div class="bb bw1">For You</div>
                 <div class="pt3 containerOne">
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
+                  <?php
+
+                    // Establish a connection to the database
+                    /*
+                    $conn = mysqli_connect("localhost", "root", "","LinkMe");
+                    if (!$conn) {
+                      die("Connection failed: " . mysqli_connect_error());
+                    }
+                    */
+                    if (isset($_POST['search'])) {
+                        $search_query = $_POST['search_query'];
+
+                        // construct SQL query
+
+                        // execute query
+                        $result = $db->search($search_query);
+
+                        // display results
+                        if ($result == true) {
+                          ?>
+                          <div class="profiletag mt3 flex flex-column yellowbackground">
+                            <div class="flex flex-column w-100 h-50 pt3 topbox">
+                              <div class="flex flex-row justify-around">
+                                <div class="pr6 pt4 username">
+                                  <a href="profile.php?username=<?php echo   $search_query; ?>"><?php echo   $search_query ;?></a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                      <?php
+                        } else {
+                            echo "No results found.";
+                        }
+                    } else {
+
+                    $result = $db->getUsers();
+                    if ($result === false) {
+                            // query failed, print error message
+                            echo "Error: " . mysqli_error($conn);
+                    }
+                    if (mysqli_num_rows($result) > 0) {
+                      // Output data of each row
+                      while($row = mysqli_fetch_assoc($result)) {
+                        // Print the data you want to display
+                        ?>
+                        <div>
+                          <div class="pt4 companyname">
+                                  <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["username"];?></a>
+                          </div>
+                        </div>
+                        <?php
+                      }
+                    } else {
+                      echo "0 results";
+                    };
+                    // Close the database connection
+                    //mysqli_close($conn);
+                  }
+                  ?>
                 </div>
             </div>
-            <div class="w-25 flex-column">
+            <div class="w-33 flex-column">
               <div class="bb bw1">Trending</div>
                 <div class="pt3 containerOne">
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
+                <?php
+
+                  // Establish a connection to the database
+                  /*
+                  $conn = mysqli_connect("localhost", "root", "","LinkMe");
+                  if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                  }
+                  */
+                  if (isset($_POST['search'])) {
+                      $search_query = $_POST['search_query'];
+
+                      // construct SQL query
+
+                      // execute query
+                      $result = $db->search($search_query);
+
+                      // display results
+                      if ($result == true) {
+                        ?>
+                        <div class="profiletag mt3 flex flex-column yellowbackground">
+                          <div class="flex flex-column w-100 h-50 pt3 topbox">
+                            <div class="flex flex-row justify-around">
+                              <div class="pr6 pt4 username">
+                                <a href="profile.php?username=<?php echo   $search_query; ?>"><?php echo   $search_query ;?></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                    <?php
+                      } else {
+                          echo "No results found.";
+                      }
+                  } else {
+
+                  $result = $db->getUsers();
+                  if ($result === false) {
+                          // query failed, print error message
+                          echo "Error: " . mysqli_error($conn);
+                  }
+                  if (mysqli_num_rows($result) > 0) {
+                    // Output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                      // Print the data you want to display
+                      ?>
+                      <div>
+                        <div class="pt4 companyname">
+                                <a href="profile.php?username=<?php echo $row[""]; ?>"><?php echo $row["niche_id"];?></a>
+                        </div>
+                      </div>
+                      <?php
+                    }
+                  } else {
+                    echo "0 results";
+                  };
+                  // Close the database connection
+                  //mysqli_close($conn);
+                  }
+                ?>
                 </div>
             </div>
-            <div class="w-25 flex-column">
+            <div class="w-40 flex-column">
               <div class="bb bw1">Top engagement</div>
                 <div class="pt3 containerOne">
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
+                <?php
+
+                  // Establish a connection to the database
+                  /*
+                  $conn = mysqli_connect("localhost", "root", "","LinkMe");
+                  if (!$conn) {
+                    die("Connection failed: " . mysqli_connect_error());
+                  }
+                  */
+                  if (isset($_POST['search'])) {
+                      $search_query = $_POST['search_query'];
+
+                      // construct SQL query
+
+                      // execute query
+                      $result = $db->search($search_query);
+
+                      // display results
+                      if ($result == true) {
+                        ?>
+                        <div class="profiletag mt3 flex flex-column yellowbackground">
+                          <div class="flex flex-column w-100 h-50 pt3 topbox">
+                            <div class="flex flex-row justify-around">
+                              <div class="pr6 pt4 username">
+                                <a href="profile.php?username=<?php echo   $search_query; ?>"><?php echo   $search_query ;?></a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                    <?php
+                      } else {
+                          echo "No results found.";
+                      }
+                  } else {
+
+                  $result = $db->getUsers();
+                  if ($result === false) {
+                          // query failed, print error message
+                          echo "Error: " . mysqli_error($conn);
+                  }
+                  if (mysqli_num_rows($result) > 0) {
+                    // Output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                      // Print the data you want to display
+                      ?>
+                      <div>
+                        <div class="pt4 companyname">
+                                <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["twitter_username"];?></a>
+                        </div>
+                      </div>
+                      <?php
+                    }
+                  } else {
+                    echo "0 results";
+                  };
+                  // Close the database connection
+                  //mysqli_close($conn);
+                  }
+                ?>
                 </div>
             </div>
-            <div class="w-25 flex-column">
-              <div class="bb bw1">Filter By</div>
-                <div class="pt3 containerOne">
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                  <div>test</div>
-                </div>
-            </div>
+            
           </div>
         </div>
       </div>
