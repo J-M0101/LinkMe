@@ -127,16 +127,16 @@
                 </div>
                 <div class="flex  flex-row w-100 h-50 justify-around topbox">
                   <div class="w-100 mediatype">YouTube
-                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["sm_username"]; ?></div>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Subscribers: <?php echo $row["youtube_count"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:center">Username: <?php echo $row["sm_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:center">Subscribers: <?php echo $row["youtube_count"]; ?></div>
                   </div>
                   <div class="w-100 mediatype">Facebook
-                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["sm_username"]; ?></div>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Likes: <?php echo $row["facebook_count"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:center">Username: <?php echo $row["sm_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:center">Likes: <?php echo $row["facebook_count"]; ?></div>
                   </div>
                   <div class="w-100 mediatype">Twitter
-                    <div class="pt3 pl3 accountname" style="text-align:left">Username: <?php echo $row["sm_username"]; ?></div>
-                    <div class="pt3 pl3 accountname" style="text-align:left">Followers: <?php echo $row["twitter_count"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align:center">Username: <?php echo $row["sm_username"]; ?></div>
+                    <div class="pt3 pl3 accountname" style="text-align: center">Followers: <?php echo $row["twitter_count"]; ?></div>
                   </div>
                 </div>
               </div>
