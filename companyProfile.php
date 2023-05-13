@@ -1,6 +1,6 @@
 <html style="background-color:#36413D">
   <head>
-  <title>Home Page</title>
+  <title>Company Profile</title>
   <?php
   include "head.php";
   require_once("include.php");
@@ -58,7 +58,10 @@
             }
             */
 
-            $result = $db->getUser($_GET["username"]);
+            $result = $db->getCompanyUser($_GET["username"]);
+            if ($result == null) {
+              $db->getCompanyUser($_GET["username"]);
+            }
             $row = mysqli_fetch_assoc($result);
             ?>
             <!-- Header -->
@@ -72,7 +75,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" style="margin-right: 10px;">
                   <path d="M21.6 7.6c-.2-.8-.8-1.4-1.5-1.5C18.5 6 12 6 12 6s-6.5 0-7.1.1C4.2 6.2 3.6 6.8 3.4 7.6 3 9 3 12 3 12s0 3 .4 4.4c.2.8.8 1.4 1.5 1.5.6.1 6.1.1 6.1.1s6.5 0 7.1-.1c.7-.1 1.3-.7 1.5-1.5.4-1.2.4-2.2.4-2.2s0-1-.4-2.4zm-12.6 6.2V8.2l5.8 2.8-5.8 2.8z" fill="#ff0000"/>
                 </svg>
-                YouTube: <?php echo $row["youtube_username"];?>
+                YouTube: <?php echo $row["username"];?>
               </div>
               <!-- YouTube Info -->
               <div>
@@ -83,7 +86,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" style="margin-right: 10px;">
                   <path fill="#1877f2" d="M20.66 2H3.34A1.34 1.34 0 0 0 2 3.34v17.32A1.34 1.34 0 0 0 3.34 22h9.89v-7.06H9.56v-2.73h3.67V9.94c0-3.63 2.22-5.61 5.44-5.61a29.43 29.43 0 0 1 3.28.17v3.78l-2.24.01c-1.76 0-2.1.84-2.1 2.06v2.71h4.19l-.55 2.73h-3.64V22h7.12A1.34 1.34 0 0 0 22 20.66V3.34A1.34 1.34 0 0 0 20.66 2z"/>
                 </svg>
-                Facebook: <?php echo $row["facebook_username"];?>
+                Facebook: <?php echo $row["username"];?>
               </div>
               <!-- Facebook Info -->
               <div class>
@@ -94,7 +97,7 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" style="margin-right: 10px;">
                   <path d="M22.046 5.592c-.807.36-1.677.602-2.59.71a4.526 4.526 0 0 0 1.987-2.49 9.045 9.045 0 0 1-2.868 1.096 4.522 4.522 0 0 0-7.738 4.117 12.81 12.81 0 0 1-9.3-4.715 4.523 4.523 0 0 0 1.397 6.025 4.494 4.494 0 0 1-2.044-.56v.056a4.523 4.523 0 0 0 3.626 4.417 4.548 4.548 0 0 1-2.04.077 4.525 4.525 0 0 0 4.223 3.136 9.073 9.073 0 0 1-5.611 1.936c-.364 0-.718-.02-1.07-.06a12.73 12.73 0 0 0 6.912 2.026c8.322 0 12.874-6.907 12.874-12.906 0-.196-.004-.392-.013-.586a9.198 9.198 0 0 0 2.25-2.345l-.049-.02z" fill="#1DA1F2"/>
                 </svg>
-                Twitter: <?php echo $row["twitter_username"];?>
+                Twitter: <?php echo $row["username"];?>
               </div>
               <!-- Twitter Info -->
               <div class>
@@ -126,7 +129,7 @@
             }
             */
 
-            $result = $db->getUser($_GET["username"]);
+            $result = $db->getCompanyUser($_GET["username"]);
             $row = mysqli_fetch_assoc($result);
             $total_count = $row["facebook_follower_count"] + $row["twitter_follower_count"] + $row["youtube_follower_count"];
             $twitter_ratio = $row["twitter_follower_count"] / $total_count;
@@ -136,7 +139,7 @@
             ?>
             <div class="mt4 mb4 ml4 mr4 w-40">
               <div style="text-align: left; font-size: 36px;">
-                <?php echo $_GET["username"];?>
+                <?php echo $row["firstname"];?>  <?php echo $row["lastname"];?>
               </div>
               <div style="text-align: left; font-size: 20px;">
                 <a href = "mailto: <?php echo $row["email"];?>">Send Email</a>
@@ -164,11 +167,11 @@
                 About Me
               </div>
               <div class="mt2 mb4" style="text-align: left; font-size: 16px; font-family: Arial;">
-                <?php echo $row["bio"];?>
+                Company & Role: <?php echo $row["username"];?>  - <?php echo $row["role"];?>
               </div>
               <!-- Tags -->
               <div class="mt2 mb4" style="text-align: left; font-size: 16px; font-family: Arial;">
-                Tag: <?php echo $row["niche_id"];?>
+                Tag: <?php echo $row["niche"];?>
               </div>
             </div>
             <div class="pa3 w-60">

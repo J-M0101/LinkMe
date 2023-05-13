@@ -84,10 +84,10 @@ class DataBaseActions extends Exception{
         `role` varchar(255) NOT NULL,
         `password` varchar(255) NOT NULL,
         `email` varchar(255) NOT NULL UNIQUE,
-        `sm_username` varchar(255) UNIQUE,
-        `facebook_count` varchar(255),
-        `twitter_count` varchar(255),
-        `youtube_count` varchar(255),
+        `username` varchar(255) UNIQUE,
+        `facebook_follower_count` varchar(255),
+        `twitter_follower_count` varchar(255),
+        `youtube_follower_count` varchar(255),
         `niche` varchar(255))
         ";
         $results = mysqli_query($this->conn, $sql);
@@ -132,7 +132,7 @@ class DataBaseActions extends Exception{
             ('Benjamin', 'Lee', 'benjamin.lee5678@example.com', '5678', 'benl', '6.3', 'photos', 'benjamin_photo', 'lee_visuals', 'benjaminleephotography', 78901, 23456, 12345, 'Professional photographer specializing in commercial and product photography. Helping businesses showcase their products in the best possible light.')";
             $results = mysqli_query($this->conn, $sql);
 
-            $sql = "INSERT INTO `business_users` (`firstname`, `lastname`, `company`, `role`, `password`, `email`,`sm_username`, `facebook_count`, `twitter_count`, `youtube_count`,`niche` )
+            $sql = "INSERT INTO `business_users` (`firstname`, `lastname`, `company`, `role`, `password`, `email`,`username`, `facebook_follower_count`, `twitter_follower_count`, `youtube_follower_count`,`niche` )
             VALUES
             ('test1', 'test1','Roku','Marketing Manager','1234', 'Roku@gmail.com', 'Roku', 23456, 89012, 78451, 'Fashion'),
             ('John', 'Doe', 'Acme Corporation', 'Marketing Manager', '555-1234', 'johndoe@acmecorp.com', 'Acme Corp', 78901, 23456, 12345, 'Health'),
@@ -264,7 +264,17 @@ class DataBaseActions extends Exception{
     }
 
     public function getUser($username){
-        $sql = $sql = "SELECT * FROM creator_users WHERE username = '$username' ";
+        $sql = "SELECT * FROM creator_users WHERE username = '$username' ";
+        $result = mysqli_query($this->conn, $sql);
+        //checking for error
+        if (!$result) {
+            die('Error executing query: ' . mysqli_error($this->conn));
+        }
+        return $result;
+    }
+
+    public function getCompanyUser($username){
+        $sql = "SELECT * FROM business_users WHERE username = '$username' ";
         $result = mysqli_query($this->conn, $sql);
         //checking for error
         if (!$result) {
@@ -326,14 +336,14 @@ class DataBaseActions extends Exception{
     }
 
     public function searchCompany($search_query){
-        $sql = "SELECT * FROM business_user WHERE company = '$search_queryOne' ";
+        $sql = "SELECT * FROM business_users WHERE username = '$search_query' ";
         $result = mysqli_query($this->conn, $sql);
         if(mysqli_num_rows($result) == 1) {
             return true;
         }
         return false;
       }
-    
+
 
     public function socialMediaButton($email,$social_media){
         //generate random numbers of followers
