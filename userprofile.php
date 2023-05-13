@@ -20,7 +20,7 @@
       <div class="flex pt4">
         <div class="titletext w-100 flex" style="justify-between">
           <div class="mr2">
-            <form action="userprofile.php" class="w-100" method="post">
+            <form action="profile.php" class="w-100" method="post">
               <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Profile">
             </form>
           </div>
@@ -161,36 +161,7 @@
                 Tag: <?php echo $row["niche_id"];?>
               </div>
             </div>
-            <div class="pa3 w-60">
-              <table class="charts-css column show-heading show-labels show-primary-axis show-4-secondary-axes show-data-axes data-spacing-15 hide-data">
-                <caption> Follower Ratio </caption>
-
-                <thead>
-                  <tr>
-                    <th scope="col"> Year </th>
-                    <th scope="col"> Value </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <th> Youtube </th>
-                    <td style="--size:0.20;"></td>
-                  </tr>
-                  <tr>
-                    <th> Instagram </th>
-                    <td style="--size:0.49;"></td>
-                  </tr>
-                  <tr>
-                    <th> Twitter </th>
-                    <td style="--size:0.49;"></td>
-                  </tr>
-                  <tr>
-                    <th> Facebook </th>
-                    <td style="--size:0.3;"></td>
-                  </tr>
-                </tbody>
-              </table>
+            
             </div>
           </div>
         </div>
