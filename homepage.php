@@ -22,8 +22,8 @@
       <div class="flex pt4">
         <div class="titletext w-100 flex" style="justify-between">
           <div class="mr2">
-            <form action="profile.php" class="w-100" method="post">
-              <a href="profile.php?username=davidb"> <input class="w-100 bluebackground link grow bg-animate" type="button" value="Profile"></a> 
+            <form action="userprofile.php" class="w-100" method="post">
+              <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Profile">
             </form>
           </div>
           <div class="mr2">

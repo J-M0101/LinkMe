@@ -29,7 +29,7 @@
     (SELECT id FROM niches WHERE name = '$niche'))";
 
 
-nclude "DataBaseActions.php";
+Include "DataBaseActions.php";
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
