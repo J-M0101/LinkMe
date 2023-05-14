@@ -169,7 +169,7 @@
                       ?>
                       <div>
                         <div class="pt4 companyname">
-                                <a href="profile.php?username=<?php echo $row[""]; ?>"><?php echo $row["niche_id"];?></a>
+                                <?php echo $row["niche_id"];?>
                         </div>
                       </div>
                       <?php
