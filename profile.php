@@ -1,6 +1,6 @@
 <html style="background-color:#36413D">
   <head>
-  <title>Home Page</title>
+  <title>Creator Profile</title>
   <?php
   include "head.php";
   require_once("include.php");

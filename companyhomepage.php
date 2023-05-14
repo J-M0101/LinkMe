@@ -1,6 +1,6 @@
 <html style="background-color:#36413D">
   <head>
-  <title>Home Page</title>
+  <title>Company Home Page</title>
   <?php
     include "head.php";
     require_once("include.php");
