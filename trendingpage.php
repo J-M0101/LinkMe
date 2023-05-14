@@ -27,6 +27,11 @@
             </form>
           </div>
           <div class="mr2">
+            <form action="companyhomepage.php" class="w-100" method="post">
+              <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Companies">
+            </form>
+          </div>
+          <div class="mr2">
             <form action="trendingpage.php" class="w-100" method="post">
               <input class="w-100 bluebackground link grow bg-animate" type="submit" value="Trending">
             </form>
@@ -51,8 +56,8 @@
           </form>
         </div> -->
         <!-- profile summary -->
-        <div class="flex h-75 mt4 justify-center">  
-          <div class="flex w-90 justify-center pt3 yellowbackground">
+        <div class="flex h-85 mt4 justify-center">  
+          <div class="flex w-90 justify-center pt3 pr3 pl3 pb3 yellowbackground">
             <div class="w-33 flex-column">
               <div class="bb bw1">For You</div>
                 <div class="pt3 containerOne">
