@@ -117,8 +117,9 @@
                         <?php echo $row["engagement"]; ?>
                       </p>
                     </div>
-                    <div class="pr6 pt4 username" style="font-size: 60px;">
+                    <div class="pr6 pt4 username" style="font-size: 50px;">
                       <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["username"];?></a>
+                      <div class="companyname" style="font-family: Arial;"><b><?php echo $row["niche_id"];?></b></div>
                     </div>
                   </div>
                 </div>
