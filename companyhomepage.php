@@ -86,7 +86,7 @@
                   <div class="flex flex-column w-100 h-50 pt3 topbox">
                     <div class="flex flex-row justify-around">
                       <div class="pr6 pt4 username">
-                        <a href="profile.php?username=<?php echo   $search_query; ?>"><?php echo   $search_query ;?></a>
+                        <a href="companyProfile.php?username=<?php echo   $search_query; ?>"><?php echo   $search_query ;?></a>
                       </div>
                     </div>
                   </div>
