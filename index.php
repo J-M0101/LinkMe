@@ -16,7 +16,7 @@
 ?>
 <html>
   <head>
-  <title>Home Page</title>
+  <title>Login</title>
   <?php
     include "head.php";
 ?>
