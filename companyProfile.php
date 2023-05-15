@@ -50,14 +50,7 @@
           <!-- Formatting for container of items -->
           <div class="mt4 mb4 ml4 mr4">
             <?php
-            // Establish a connection to the database
-          /*
-            $conn = mysqli_connect("localhost", "root", "","LinkMe");
-            if (!$conn) {
-              die("Connection failed: " . mysqli_connect_error());
-            }
-            */
-
+            // Establish a connection to the database and get username
             $result = $db->getCompanyUser($_GET["username"]);
             if ($result == null) {
               $db->getCompanyUser($_GET["username"]);
@@ -109,26 +102,12 @@
       </div>
       <!-- middle column -->
       <div class="w-60">
-        <!-- search -->
-        <!-- <div class="mt4 mb4" style="text-align: center">
-        <form method="post">
-    <input class= "w-70 pv3 centertext round"  type="text" name="search_query" placeholder="Search...">
-    <button type="submit" name="search">Search</button>
-</form>
-        </div> -->
         <!-- profile summary -->
         <div class="flex h-60 mt4 justify-center">
           <div class="flex w-90 yellowbackground">
-            <!-- Username -->
             <?php
             // Establish a connection to the database
-            /*
-            $conn = mysqli_connect("localhost", "root", "","LinkMe");
-            if (!$conn) {
-              die("Connection failed: " . mysqli_connect_error());
-            }
-            */
-
+            // Get follower counts
             $result = $db->getCompanyUser($_GET["username"]);
             $row = mysqli_fetch_assoc($result);
             $total_count = $row["facebook_follower_count"] + $row["twitter_follower_count"] + $row["youtube_follower_count"];
@@ -137,7 +116,9 @@
             $youtube_ratio = $row["youtube_follower_count"] / $total_count;
 
             ?>
+            <!-- Middle box -->
             <div class="mt4 mb4 ml4 mr4 w-40">
+              <!-- Name display -->
               <div style="text-align: left; font-size: 36px;">
                 <?php echo $row["firstname"];?>  <?php echo $row["lastname"];?>
               </div>
@@ -160,6 +141,7 @@
               <div class="mt2 mb2" style="text-align: left; font-size: 22px; font-family: Arial;">
                 About Me
               </div>
+              <!-- Company & Role -->
               <div class="mt2 mb4" style="text-align: left; font-size: 16px; font-family: Arial;">
                 Company & Role: <?php echo $row["username"];?>  - <?php echo $row["role"];?>
               </div>
@@ -169,6 +151,7 @@
               </div>
             </div>
             <div class="pa3 w-60">
+              <!-- Follower Ratio chart -->
               <table class="charts-css column show-heading show-labels show-primary-axis show-4-secondary-axes show-data-axes data-spacing-15 hide-data">
                 <caption> Follower Ratio </caption>
 

@@ -6,8 +6,6 @@
     require_once("include.php");
     require_once("DataBaseActions.php");
     $db = new DataBaseActions();
-    // include "DataBaseActions.php";
-    // $db = new DataBaseActions();
 ?>
   </head>
   <body style="background-color:#36413D">
@@ -64,17 +62,10 @@
           <!-- First profile box (margin for first is different than the rest) -->
           <?php
 
-          // Establish a connection to the database
-        /*
-          $conn = mysqli_connect("localhost", "root", "","LinkMe");
-          if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-          }
-          */
+          // construct SQL query
           if (isset($_POST['search'])) {
               $search_query = $_POST['search_query'];
 
-              // construct SQL query
 
               // execute query
               $result = $db->search($search_query);
@@ -127,14 +118,17 @@
                   <div class="username" style="font-size: 40px;">Statistics</div>
                 </div>
                 <div class="flex  flex-row w-100 h-50 justify-around topbox">
+                  <!-- YouTube Info-->
                   <div class="w-100 mediatype" style="font-family: Arial;"><b>YouTube</b>
                     <div class="pt3 pl3 accountname" style="text-align: left; font-family: Arial;">Username: <?php echo $row["youtube_username"]; ?></div>
                     <div class="pt3 pl3 accountname" style="text-align: left; font-family: Arial;">Subscribers: <?php echo $row["youtube_follower_count"]; ?></div>
                   </div>
+                  <!-- Facebook Info-->
                   <div class="w-100 mediatype" style="font-family: Arial;"><b>Facebook</b>
                     <div class="pt3 pl3 accountname" style="text-align: left; font-family: Arial;">Username: <?php echo $row["facebook_username"]; ?></div>
                     <div class="pt3 pl3 accountname" style="text-align: left; font-family: Arial;">Friends: <?php echo $row["facebook_follower_count"]; ?></div>
                   </div>
+                  <!-- Twitter Info-->
                   <div class="w-100 mediatype" style="font-family: Arial;"><b>Twitter</b> 
                     <div class="pt3 pl3 accountname" style="text-align: left; font-family: Arial;">Username: <?php echo $row["twitter_username"]; ?></div>
                     <div class="pt3 pl3 accountname" style="text-align: left; font-family: Arial;">Followers: <?php echo $row["twitter_follower_count"]; ?></div>
@@ -147,8 +141,6 @@
             echo "0 results";
           }
           die();
-          // Close the database connection
-          //mysqli_close($conn);
         }
           ?>
         </div>

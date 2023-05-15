@@ -8,6 +8,7 @@
   <body>
     <div class="flex-column page items-center justify-center">
     <a href = "index.php" class ="introTwo pb2 flex">LinkMe</a>
+      <!-- Choose between company or creator sign up -->
       <div class="flex">
         <a href="companyinfo.php" class ="flex company mt0 mr4 grow dib f3-ns no-underline">
           company

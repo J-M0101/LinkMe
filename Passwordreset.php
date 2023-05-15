@@ -6,6 +6,7 @@
 ?>
   </head>
   <body>
+    <!-- Displays password reset message -->
     <div class="page items-center justify-center ">
        Password Reset
     </div>

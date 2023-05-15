@@ -25,6 +25,7 @@
   <body>
     <div class="page items-center justify-center flex-column"> <!-- Used for display flex. helps to align boxes on pages to parent -->
       <div class="flex align-column statusmessage">
+        <!-- Login validation -->
         <?php
           if(isset($_POST["submit"])){
             if(!empty($_POST['email']) && !empty($_POST['password'])) {
@@ -76,6 +77,7 @@
         </div>
       </div>
     </div>
+    <!-- Site info boxes -->
     <div class="page justify-around">
       <div class="greybackground flex w-50 pa5 mr6 mb7 grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow" style="text-align: left; font-size: 24px; font-family: Arial;">
           <p class = "w-100">Welcome to our platform, the premier community-driven marketplace that connects content creators with brands for sponsored opportunities. Our platform was designed to simplify the process of finding and collaborating with the perfect creator for your brand, and to empower content creators to monetize their content creation. We believe in fostering strong relationships between brands and creators and are committed to making the process more efficient, authentic, and impactful.</p>
