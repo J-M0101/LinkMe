@@ -48,13 +48,6 @@
     <div class="flex mt5 justify-center h-100">
       <!-- middle column -->
       <div class="w-60">
-        <!-- search -->
-        <!-- <div class="mt4 mb4 " style="text-align: center">
-          <form action="smconnect.php" method="post">
-          <label class="pt1" for="search"></label>
-          <input class="w-70 pv3 centertext round" type="text" name="search" onfocus="this.value=''" value="search">
-          </form>
-        </div> -->
         <!-- profile summary -->
         <div class="flex h-85 mt4 justify-center">  
           <div class="flex w-90 justify-center pt3 pr3 pl3 pb3 yellowbackground">
@@ -62,18 +55,9 @@
               <div class="bb bw1">For You</div>
                 <div class="pt3 containerOne">
                   <?php
-
-                    // Establish a connection to the database
-                    /*
-                    $conn = mysqli_connect("localhost", "root", "","LinkMe");
-                    if (!$conn) {
-                      die("Connection failed: " . mysqli_connect_error());
-                    }
-                    */
+                    // construct SQL query
                     if (isset($_POST['search'])) {
                         $search_query = $_POST['search_query'];
-
-                        // construct SQL query
 
                         // execute query
                         $result = $db->search($search_query);
@@ -109,7 +93,7 @@
                         ?>
                         <div>
                           <div class="pt4 companyname">
-                                  <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["username"];?></a>
+                            <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["username"];?></a>
                           </div>
                         </div>
                         <?php
@@ -117,8 +101,6 @@
                     } else {
                       echo "0 results";
                     };
-                    // Close the database connection
-                    //mysqli_close($conn);
                   }
                   ?>
                 </div>
@@ -128,17 +110,9 @@
                 <div class="pt3 containerOne">
                 <?php
 
-                  // Establish a connection to the database
-                  /*
-                  $conn = mysqli_connect("localhost", "root", "","LinkMe");
-                  if (!$conn) {
-                    die("Connection failed: " . mysqli_connect_error());
-                  }
-                  */
+                  // construct SQL query
                   if (isset($_POST['search'])) {
                       $search_query = $_POST['search_query'];
-
-                      // construct SQL query
 
                       // execute query
                       $result = $db->search($search_query);
@@ -182,8 +156,6 @@
                   } else {
                     echo "0 results";
                   };
-                  // Close the database connection
-                  //mysqli_close($conn);
                   }
                 ?>
                 </div>
@@ -193,17 +165,9 @@
                 <div class="pt3 containerOne">
                 <?php
 
-                  // Establish a connection to the database
-                  /*
-                  $conn = mysqli_connect("localhost", "root", "","LinkMe");
-                  if (!$conn) {
-                    die("Connection failed: " . mysqli_connect_error());
-                  }
-                  */
+                  // construct SQL query
                   if (isset($_POST['search'])) {
                       $search_query = $_POST['search_query'];
-
-                      // construct SQL query
 
                       // execute query
                       $result = $db->search($search_query);
@@ -239,7 +203,7 @@
                       ?>
                       <div>
                         <div class="pt4 companyname">
-                                <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["twitter_username"];?></a>
+                          <a href="profile.php?username=<?php echo $row["username"]; ?>"><?php echo $row["twitter_username"];?></a>
                         </div>
                       </div>
                       <?php
@@ -247,8 +211,6 @@
                   } else {
                     echo "0 results";
                   };
-                  // Close the database connection
-                  //mysqli_close($conn);
                   }
                 ?>
                 </div>
