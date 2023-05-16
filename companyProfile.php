@@ -83,7 +83,7 @@
               </div>
               <!-- Facebook Info -->
               <div class>
-                Friends: <?php echo $row["facebook_follower_count"];?>
+                Likes: <?php echo $row["facebook_follower_count"];?>
               </div>
               <!-- Twitter Header -->
               <div class="mt4 mb2" style="font-size: 20px";>
