@@ -67,7 +67,7 @@
             </div>
 
             <div class="flex justify-center"><!-- display box holds Create account button-->
-                <a href = "creatorcompany.php" class=" button ph5 pv3 ma0 bckColorCreateAccount grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow buttoncolor">Create Accout</a>
+                <a href = "creatorcompany.php" class=" button ph5 pv3 ma0 bckColorCreateAccount grow dib f3-ns no-underline black pv2 db bg-animate hover-bg-yellow buttoncolor">Create Account</a>
             </div>
 
             <div class="flex justify-center pt3"><!-- display box holds Forgot Password button-->
